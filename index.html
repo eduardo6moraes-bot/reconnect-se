@@ -1,154 +1,185 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eduardo Moraes | Reconect-se IA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundação Reconecte-se | Professor</title>
+    <style>
+        :root { 
+            --gelo: #F5F5F7; 
+            --azul: #007AFF; 
+            --texto: #1D1D1F; 
+            --branco: #FFFFFF;
+        }
+        
+        body { 
+            background-color: var(--gelo); 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            color: var(--texto); 
+            margin: 0; 
+            line-height: 1.6; 
+            -webkit-font-smoothing: antialiased;
+        }
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
+        header { 
+            padding: 80px 20px; 
+            text-align: center; 
+            background: var(--branco); 
+            border-bottom: 1px solid #d2d2d7; 
+        }
 
-  <!-- Font Awesome -->
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    rel="stylesheet"
-  />
+        .brasao-container {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-  <!-- Google Font -->
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap");
+        .brasao-interativo { 
+            width: 100%;
+            height: auto;
+            cursor: pointer; 
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.12)); 
+        }
 
-    body {
-      font-family: "Plus Jakarta Sans", sans-serif;
-      background-color: #050505;
-      color: #fafafa;
-    }
+        .brasao-interativo:hover { 
+            transform: scale(1.1) rotate(2deg); 
+        }
 
-    .gold-gradient {
-      background: linear-gradient(
-        135deg,
-        #d4af37 0%,
-        #f9f295 50%,
-        #b8860b 100%
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+        h1 { font-size: 2.8rem; font-weight: 700; margin: 10px 0; letter-spacing: -0.5px; }
+        .subtitle { font-size: 1.2rem; color: #86868b; font-weight: 400; }
 
-    .card-soberania {
-      background: linear-gradient(
-        145deg,
-        rgba(255, 255, 255, 0.06),
-        rgba(255, 255, 255, 0.01)
-      );
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(12px);
-      transition: all 0.3s ease;
-    }
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+        
+        .secao-titulo { 
+            text-align: center; 
+            font-size: 0.85rem; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            color: var(--azul); 
+            margin-bottom: 15px; 
+            font-weight: 700; 
+        }
 
-    .card-soberania:hover {
-      border-color: #d4af37;
-      transform: scale(1.03);
-    }
-  </style>
+        .manifesto { 
+            font-size: 1.8rem; 
+            text-align: center; 
+            font-weight: 600; 
+            margin-bottom: 80px; 
+            color: var(--texto);
+            padding: 0 20px;
+        }
+
+        /* Cronologia Premium */
+        .timeline { position: relative; border-left: 3px solid #d2d2d7; padding-left: 40px; margin-left: 30px; }
+        .step { position: relative; margin-bottom: 50px; background: var(--branco); padding: 30px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+        .step::before { 
+            content: ""; 
+            position: absolute; 
+            left: -55px; 
+            top: 35px; 
+            width: 24px; 
+            height: 24px; 
+            background: var(--azul); 
+            border-radius: 50%; 
+            border: 5px solid var(--gelo); 
+        }
+        .step h3 { margin: 0 0 10px 0; font-size: 1.4rem; color: var(--azul); }
+        .step p { margin: 0; color: #424245; font-size: 1.1rem; }
+
+        /* Hall da Fama - Medalhas */
+        .hall-fama { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
+            gap: 25px; 
+            margin-top: 60px; 
+        }
+        .medalha { 
+            background: var(--branco); 
+            padding: 25px; 
+            border-radius: 20px; 
+            text-align: center; 
+            transition: all 0.3s ease; 
+            border: 1px solid #d2d2d7; 
+        }
+        .medalha:hover { 
+            border-color: var(--azul); 
+            transform: translateY(-8px); 
+            box-shadow: 0 10px 30px rgba(0,122,255,0.1);
+        }
+        .medalha-icon { font-size: 3rem; display: block; margin-bottom: 15px; }
+        .medalha strong { font-size: 1rem; display: block; }
+
+        .btn-medium { 
+            display: block; 
+            text-align: center; 
+            background: var(--texto); 
+            color: var(--branco); 
+            padding: 22px; 
+            border-radius: 16px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            font-size: 1.1rem;
+            margin-top: 60px; 
+            transition: all 0.3s; 
+        }
+        .btn-medium:hover { background: var(--azul); transform: scale(1.02); }
+
+        footer { text-align: center; padding: 40px; color: #86868b; font-size: 0.9rem; }
+    </style>
 </head>
+<body>
 
-<body class="antialiased">
+<header>
+    <div class="brasao-container">
+        <img src="https://reconnect-se.ia.br/brasao.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" alt="Brasão Fundação" class="brasao-interativo">
+    </div>
+    <h1>Fundação Reconecte-se</h1>
+    <p class="subtitle">Professor Eduardo Valaci | Desenvolvedor & Mega Tester</p>
+</header>
 
-  <!-- HERO -->
-  <section class="min-h-screen flex flex-col items-center justify-center px-6 text-center relative overflow-hidden">
+<div class="container">
+    <div class="secao-titulo">Nosso Manifesto</div>
+    <div class="manifesto">Construindo a Arquitetura do Sentido Humano através da Inteligência Artificial Humanizada.</div>
 
-    <div class="absolute inset-0 bg-[radial-gradient(circle,rgba(212,175,55,0.08)_0%,transparent_70%)]"></div>
-
-    <!-- Avatar -->
-    <div class="relative mb-10">
-      <div class="w-36 h-36 rounded-full border-2 border-amber-500/30 p-1.5 shadow-[0_0_50px_rgba(212,175,55,0.15)]">
-        <div class="w-full h-full rounded-full bg-zinc-900 flex items-center justify-center border border-amber-500/20">
-          <i class="fas fa-fingerprint text-6xl text-amber-500"></i>
+    <div class="secao-titulo">Cronologia de Autoridade</div>
+    <div class="timeline">
+        <div class="step">
+            <h3>Mestre de Fluxos (Uber)</h3>
+            <p>A base da pirâmide: 10.000 horas decifrando padrões comportamentais, logística de alta escala e dinâmica de rede em tempo real.</p>
         </div>
-      </div>
-
-      <div class="absolute -bottom-2 -right-2 bg-zinc-900 border border-amber-500/60 px-3 py-1 rounded-lg">
-        <span class="text-[10px] font-black uppercase text-amber-500">
-          Soberania · IA.BR
-        </span>
-      </div>
+        <div class="step">
+            <h3>Rigor Bancário (Itaú)</h3>
+            <p>8 anos de consolidada experiência em gestão e processos de alta complexidade no maior banco da América Latina.</p>
+        </div>
+        <div class="step">
+            <h3>Psicanálise Clínica</h3>
+            <p>A virada de chave: Formação analítica que permitiu a criação da metodologia ASH (Arquitetura do Sentido Humano).</p>
+        </div>
+        <div class="step">
+            <h3>Referência Global em Testes</h3>
+            <p>Atuação técnica em Bug Bounty e Hackathons de elite. Conexão direta com sistemas do Google, OpenAI e Meta.</p>
+        </div>
     </div>
 
-    <!-- Title -->
-    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4">
-      Eduardo <span class="gold-gradient">Moraes</span>
-    </h1>
-
-    <p class="text-zinc-400 text-lg md:text-xl max-w-xl mb-12 leading-relaxed">
-      Autor da Matriz ASH • Google Bug Hunter<br />
-      A biometria da inteligência humana aplicada à tecnologia global
-    </p>
-
-    <!-- Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl w-full mb-16">
-
-      <a
-        href="https://chatgpt.com/share/69881394-1650-8003-9707-51ef4d721b5b"
-        target="_blank"
-        class="bg-white text-black px-8 py-5 rounded-2xl font-bold flex items-center justify-center hover:bg-zinc-200 transition"
-      >
-        <i class="fas fa-certificate mr-3 text-xl text-amber-600"></i>
-        Lastro de Anterioridade
-      </a>
-
-      <a
-        href="https://bughunters.google.com/"
-        target="_blank"
-        class="card-soberania px-8 py-5 rounded-2xl font-bold flex items-center justify-center"
-      >
-        <i class="fas fa-award mr-3 text-xl text-amber-500"></i>
-        Google Bug Hunter
-      </a>
-
-      <a
-        href="https://github.com/eduardo6moraes-bot"
-        target="_blank"
-        class="card-soberania px-8 py-5 rounded-2xl font-bold flex items-center justify-center"
-      >
-        <i class="fab fa-github mr-3 text-xl text-zinc-400"></i>
-        GitHub
-      </a>
-
-      <a
-        href="https://medium.com/@prof-eduardo-moraes"
-        target="_blank"
-        class="card-soberania px-8 py-5 rounded-2xl font-bold flex items-center justify-center"
-      >
-        <i class="fab fa-medium mr-3 text-xl text-zinc-400"></i>
-        Manifesto ASH
-      </a>
-
+    <div class="secao-titulo">Hall da Fama (Premiações Indiscutíveis)</div>
+    <div class="hall-fama">
+        <div class="medalha"><span class="medalha-icon">🛡️</span><strong>Google Issue<br>Tracker</strong></div>
+        <div class="medalha"><span class="medalha-icon">🤖</span><strong>Gemini 3<br>Hackathon</strong></div>
+        <div class="medalha"><span class="medalha-icon">⚖️</span><strong>OpenAI<br>Compliance</strong></div>
+        <div class="medalha"><span class="medalha-icon">♾️</span><strong>Meta<br>Tech Partner</strong></div>
+        <div class="medalha"><span class="medalha-icon">🧠</span><strong>Especialista<br>ASH</strong></div>
     </div>
 
-    <!-- References -->
-    <div class="opacity-40">
-      <p class="text-[10px] uppercase tracking-[0.4em] text-zinc-600 mb-6 font-black">
-        Referencial de Matriz para Tecnologia Global
-      </p>
-      <div class="flex gap-8 justify-center grayscale">
-        <span class="text-sm font-bold">OpenAI</span>
-        <span class="text-sm font-bold">Google</span>
-        <span class="text-sm font-bold">Amazon</span>
-      </div>
-    </div>
+    <a href="https://medium.com" target="_blank" class="btn-medium">Explorar Metodologia ASH no Medium</a>
+</div>
 
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="py-16 border-t border-white/5 text-center bg-zinc-950">
-    <p class="text-zinc-600 text-[10px] tracking-[0.5em] uppercase mb-4">
-      Integridade • Soberania • Honra
-    </p>
-    <p class="text-zinc-400 text-sm font-bold tracking-widest uppercase">
-      © 2026 Eduardo Moraes
-    </p>
-  </footer>
+<footer>
+    © 2026 Fundação Reconecte-se - Ponto de Convergência
+</footer>
 
 </body>
 </html>
