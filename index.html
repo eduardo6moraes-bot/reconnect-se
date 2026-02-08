@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eduardo Moraes | Reconect-se IA</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Google Font -->
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap");
+
+    body {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      background-color: #050505;
+      color: #fafafa;
+    }
+
+    .gold-gradient {
+      background: linear-gradient(
+        135deg,
+        #d4af37 0%,
+        #f9f295 50%,
+        #b8860b 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card-soberania {
+      background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.06),
+        rgba(255, 255, 255, 0.01)
+      );
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+    }
+
+    .card-soberania:hover {
+      border-color: #d4af37;
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+
+  <!-- HERO -->
+  <section class="min-h-screen flex flex-col items-center justify-center px-6 text-center relative overflow-hidden">
+
+    <div class="absolute inset-0 bg-[radial-gradient(circle,rgba(212,175,55,0.08)_0%,transparent_70%)]"></div>
+
+    <!-- Avatar -->
+    <div class="relative mb-10">
+      <div class="w-36 h-36 rounded-full border-2 border-amber-500/30 p-1.5 shadow-[0_0_50px_rgba(212,175,55,0.15)]">
+        <div class="w-full h-full rounded-full bg-zinc-900 flex items-center justify-center border border-amber-500/20">
+          <i class="fas fa-fingerprint text-6xl text-amber-500"></i>
+        </div>
+      </div>
+
+      <div class="absolute -bottom-2 -right-2 bg-zinc-900 border border-amber-500/60 px-3 py-1 rounded-lg">
+        <span class="text-[10px] font-black uppercase text-amber-500">
+          Soberania · IA.BR
+        </span>
+      </div>
+    </div>
+
+    <!-- Title -->
+    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4">
+      Eduardo <span class="gold-gradient">Moraes</span>
+    </h1>
+
+    <p class="text-zinc-400 text-lg md:text-xl max-w-xl mb-12 leading-relaxed">
+      Autor da Matriz ASH • Google Bug Hunter<br />
+      A biometria da inteligência humana aplicada à tecnologia global
+    </p>
+
+    <!-- Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl w-full mb-16">
+
+      <a
+        href="https://chatgpt.com/share/69881394-1650-8003-9707-51ef4d721b5b"
+        target="_blank"
+        class="bg-white text-black px-8 py-5 rounded-2xl font-bold flex items-center justify-center hover:bg-zinc-200 transition"
+      >
+        <i class="fas fa-certificate mr-3 text-xl text-amber-600"></i>
+        Lastro de Anterioridade
+      </a>
+
+      <a
+        href="https://bughunters.google.com/"
+        target="_blank"
+        class="card-soberania px-8 py-5 rounded-2xl font-bold flex items-center justify-center"
+      >
+        <i class="fas fa-award mr-3 text-xl text-amber-500"></i>
+        Google Bug Hunter
+      </a>
+
+      <a
+        href="https://github.com/eduardo6moraes-bot"
+        target="_blank"
+        class="card-soberania px-8 py-5 rounded-2xl font-bold flex items-center justify-center"
+      >
+        <i class="fab fa-github mr-3 text-xl text-zinc-400"></i>
+        GitHub
+      </a>
+
+      <a
+        href="https://medium.com/@prof-eduardo-moraes"
+        target="_blank"
+        class="card-soberania px-8 py-5 rounded-2xl font-bold flex items-center justify-center"
+      >
+        <i class="fab fa-medium mr-3 text-xl text-zinc-400"></i>
+        Manifesto ASH
+      </a>
+
+    </div>
+
+    <!-- References -->
+    <div class="opacity-40">
+      <p class="text-[10px] uppercase tracking-[0.4em] text-zinc-600 mb-6 font-black">
+        Referencial de Matriz para Tecnologia Global
+      </p>
+      <div class="flex gap-8 justify-center grayscale">
+        <span class="text-sm font-bold">OpenAI</span>
+        <span class="text-sm font-bold">Google</span>
+        <span class="text-sm font-bold">Amazon</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-16 border-t border-white/5 text-center bg-zinc-950">
+    <p class="text-zinc-600 text-[10px] tracking-[0.5em] uppercase mb-4">
+      Integridade • Soberania • Honra
+    </p>
+    <p class="text-zinc-400 text-sm font-bold tracking-widest uppercase">
+      © 2026 Eduardo Moraes
+    </p>
+  </footer>
+
+</body>
+</html>
