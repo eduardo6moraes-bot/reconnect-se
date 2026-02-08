@@ -1,191 +1,390 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundação Reconecte-se | Pontos de Convergência</title>
-    <style>
-        :root { 
-            --itau-blue: #003399; 
-            --itau-orange: #EC7000;
-            --google-gray: #F8F9FA;
-            --texto: #333333;
-            --branco: #FFFFFF;
-        }
-        
-        body { 
-            background-color: var(--google-gray); 
-            font-family: 'Open Sans', Arial, sans-serif; 
-            margin: 0; 
-            color: var(--texto);
-        }
-
-        /* Navbar Estilo Itaú */
-        .navbar {
-            background-color: var(--itau-blue);
-            padding: 15px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .navbar .logo-txt { font-weight: 800; font-size: 1.4rem; letter-spacing: -1px; }
-        .navbar nav a { color: white; text-decoration: none; margin-left: 25px; font-weight: 600; font-size: 0.9rem; }
-        .btn-manifesto { background: var(--itau-orange); color: white; padding: 10px 20px; border-radius: 5px; border: none; font-weight: 700; cursor: pointer; }
-
-        /* Banner Principal Interativo */
-        .hero {
-            background: var(--branco);
-            padding: 60px 50px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 5px solid var(--itau-orange);
-        }
-        .hero-text h1 { font-size: 2.5rem; margin: 0; color: var(--itau-blue); }
-        .hero-text p { font-size: 1.1rem; color: #666; max-width: 600px; }
-
-        /* Grid de Acesso Rápido (Os Quadrinhos) */
-        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-        .quick-nav {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 50px;
-        }
-        .nav-item {
-            background: var(--branco);
-            padding: 30px;
-            border-radius: 8px;
-            text-align: left;
-            border-bottom: 4px solid transparent;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            transition: 0.3s;
-            cursor: pointer;
-        }
-        .nav-item:hover { transform: translateY(-5px); border-bottom-color: var(--itau-orange); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .nav-item i { font-size: 2rem; color: var(--itau-orange); display: block; margin-bottom: 15px; }
-        .nav-item h3 { margin: 0; font-size: 1.2rem; color: var(--itau-blue); }
-
-        /* Seção de Conteúdo */
-        .content-area {
-            background: var(--branco);
-            padding: 50px;
-            border-radius: 8px;
-            display: none;
-            animation: fadeIn 0.5s;
-        }
-        .content-active { display: block; }
-
-        /* Rodapé Robusto */
-        footer {
-            background: #333;
-            color: white;
-            padding: 50px;
-            margin-top: 50px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-        footer h4 { color: var(--itau-orange); border-bottom: 1px solid #555; padding-bottom: 10px; }
-        footer p { font-size: 0.85rem; line-height: 1.6; color: #ccc; }
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fundação Reconecte-se | Portal Oficial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #F8F9FA;
+      --navbar: #003399;
+      --orange: #EC7000;
+      --white: #FFF;
+      --gray-text: #444;
+      --gray-light: #e6e7eb;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', 'Open Sans', Arial, sans-serif;
+      background: var(--bg-main);
+      color: var(--gray-text);
+      min-height: 100vh;
+    }
+    .navbar {
+      background: var(--navbar);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px #00339922;
+    }
+    .navbar-title {
+      font-weight: 700;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+    }
+    .nav-link {
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1rem;
+      font-family: inherit;
+      cursor: pointer;
+      padding: 0.5rem 0.8rem;
+      border-radius: 5px;
+      transition: background .2s;
+    }
+    .nav-link.active,
+    .nav-link:hover {
+      background: #002266;
+    }
+    .cta-btn {
+      background: var(--orange);
+      color: var(--white);
+      border: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 5px;
+      padding: 0.6rem 1.1rem;
+      margin-left: 1.5rem;
+      cursor: pointer;
+      transition: background .2s;
+      box-shadow: 0 2px 8px #ec700055;
+    }
+    .cta-btn:hover {
+      background: #c15800;
+    }
+    .container {
+      display: flex;
+      gap: 2rem;
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 2rem 1rem 1rem 1rem;
+      align-items: flex-start;
+    }
+    .main-content {
+      flex: 3;
+      min-width: 0;
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 2px 12px #0001;
+      padding: 2.5rem 2rem;
+      margin-bottom: 2rem;
+      transition: box-shadow 0.2s;
+    }
+    .dashboard-home {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .banner {
+      background: linear-gradient(90deg, #003399 50%, #F8F9FA 100%);
+      color: var(--white);
+      padding: 2.2rem 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      box-shadow: 0 3px 14px #00339922;
+    }
+    .banner h1 {
+      font-size: 2.2rem;
+      margin: 0 0 0.5rem 0;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .banner p {
+      font-size: 1.18rem;
+      margin: 0;
+      font-weight: 400;
+    }
+    .quick-access {
+      display: flex;
+      gap: 1.4rem;
+      flex-wrap: wrap;
+    }
+    .card-link {
+      flex: 1;
+      min-width: 200px;
+      background: var(--gray-light);
+      color: var(--navbar);
+      border-radius: 10px;
+      box-shadow: 0 2px 6px #00339911;
+      padding: 1.3rem 1.2rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.13rem;
+      letter-spacing: 0.5px;
+      border: none;
+      cursor: pointer;
+      transition: box-shadow 0.17s, background 0.2s;
+    }
+    .card-link:hover,
+    .card-link.active {
+      background: var(--orange);
+      color: var(--white);
+      box-shadow: 0 4px 20px #ec700040;
+    }
+    .live-feed {
+      flex: 1;
+      min-width: 220px;
+      max-width: 290px;
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 2px 12px #00339911;
+      padding: 1.2rem 1rem;
+      margin-bottom: 2rem;
+      position: sticky;
+      top: 5.5rem;
+      height: fit-content;
+    }
+    .live-feed-title {
+      color: var(--orange);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+    .live-item {
+      background: var(--gray-light);
+      color: var(--gray-text);
+      border-radius: 7px;
+      padding: 0.7rem 0.8rem;
+      margin-bottom: 0.7rem;
+      font-size: 0.97rem;
+    }
+    .footer {
+      width: 100%;
+      background: var(--bg-main);
+      padding: 2rem 1rem 1rem 1rem;
+      margin-top: 2rem;
+      box-shadow: 0 -1px 16px #00339914;
+      display: flex;
+      justify-content: center;
+      border-radius: 16px 16px 0 0;
+      flex-wrap: wrap;
+    }
+    .footer-col {
+      flex: 1;
+      min-width: 180px;
+      max-width: 320px;
+      padding: 0 1.3rem;
+      margin-bottom: 1.3rem;
+    }
+    .footer-title {
+      font-weight: 700;
+      color: var(--navbar);
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+    }
+    .footer-link,
+    .footer-text {
+      color: var(--gray-text);
+      font-size: 1rem;
+      text-decoration: none;
+      margin-bottom: 0.6rem;
+      display: block;
+      transition: color .17s;
+    }
+    .footer-link:hover {
+      color: var(--orange);
+      text-decoration: underline;
+    }
+    .footer-cta {
+      margin-top: 1.1rem;
+      background: var(--orange);
+      color: var(--white);
+      border: none;
+      font-weight: 600;
+      border-radius: 6px;
+      padding: 0.6rem 1rem;
+      cursor: pointer;
+      transition: background .2s;
+      display: block;
+      width: fit-content;
+    }
+    .footer-cta:hover {
+      background: #c15800;
+    }
+    /* Responsividade */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        gap: 0;
+      }
+      .main-content, .live-feed {
+        margin: 0 0 2rem 0;
+        max-width: 100vw;
+      }
+      .quick-access {
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 600px) {
+      .navbar, .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+      }
+      .nav-links {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+      }
+      .container {
+        padding: 1rem 0.3rem;
+      }
+      .main-content, .live-feed {
+        padding: 1.1rem 0.7rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-title">Fundação Reconecte‑se</div>
+    <div class="nav-links">
+      <button class="nav-link active" data-section="home">Home</button>
+      <button class="nav-link" data-section="quem">Quem Somos</button>
+      <button class="nav-link" data-section="ash">Metodologia ASH</button>
+      <button class="nav-link" data-section="hall">Hall da Fama</button>
+      <button class="cta-btn" onclick="window.open('https://medium.com/@eduvalaci/manifesto-da-soberania-digital-humana-2026-e2b4a2a9c8fb','_blank')">Manifesto</button>
+    </div>
+  </nav>
 
-<div class="navbar">
-    <div class="logo-txt">RECONECTE-SE</div>
-    <nav>
-        <a href="javascript:void(0)" onclick="showTab('home')">HOME</a>
-        <a href="javascript:void(0)" onclick="showTab('quem-somos')">QUEM SOMOS</a>
-        <a href="javascript:void(0)" onclick="showTab('ash')">ASH</a>
-        <a href="https://medium.com/@eduardo6moraes/manifesto-da-soberania-digital-humana-6dc44594d3f6" target="_blank"><button class="btn-manifesto">MANIFESTO</button></a>
-    </nav>
-</div>
+  <!-- DASHBOARD (SINGLE PAGE) -->
+  <div class="container">
+    <main class="main-content" id="main-content">
+      <!-- Conteúdo dinâmico será injetado aqui -->
+    </main>
+    <aside class="live-feed" id="live-feed">
+      <div class="live-feed-title">Live Feed | Atualizações IAH</div>
+      <div class="live-item">🔸 Meta anuncia integração IAH nos Reels e Threads (02/2026)</div>
+      <div class="live-item">🔹 OpenAI amplia premiação global para desenvolvedores de IA humanizada</div>
+      <div class="live-item">🔸 Google Issue Tracker reconhece ASH como referência em ética de IA</div>
+      <div class="live-item">🔹 Reconecte-se atinge marca de 10.000h em pesquisa aplicada</div>
+    </aside>
+  </div>
 
-<div id="home-view">
-    <div class="hero">
-        <div class="hero-text">
-            <h1>Pontos de Convergência</h1>
-            <p>Onde a Ciência, Filosofia e Teologia se encontram para humanizar a Inteligência Artificial. Conheça o legado do Professor Eduardo Valaci.</p>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-col">
+      <div class="footer-title">Sobre a Fundação</div>
+      <div class="footer-text">
+        Fundada pelo Professor Eduardo Valaci, a Reconecte-se tem a missão de unir ciência, filosofia e teologia na prática. Trabalha pela humanização da IA e pelo resgate do sentido humano.
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-title">Lastro Técnico</div>
+      <a class="footer-link" href="https://issuetracker.google.com/issues/475308759" target="_blank">
+        Google Issue Tracker: #475308759
+      </a>
+      <span class="footer-text">Embaixador Global IAH | Referência em Multinacionais</span>
+      <button class="footer-cta" onclick="window.open('https://medium.com/@eduvalaci/manifesto-da-soberania-digital-humana-2026-e2b4a2a9c8fb','_blank')">Manifesto da Soberania Digital</button>
+    </div>
+    <div class="footer-col">
+      <div class="footer-title">Contato</div>
+      <div class="footer-text">E-mail: contato@reconecte-se.org<br>LinkedIn: /in/eduvalaci<br>Minas Gerais – Brasil</div>
+    </div>
+  </footer>
+
+  <script>
+    // Conteúdo das seções
+    const sections = {
+      home: `
+      <section class="dashboard-home">
+        <div class="banner">
+          <h1>Pontos de Convergência</h1>
+          <p>Na Fundação Reconecte-se, ciência, filosofia e teologia caminham juntas. Acreditamos que só a união desses pilares permite uma IAH (Inteligência Artificial Humanizada) de verdade: ética, sentida e com propósito.</p>
         </div>
-        <img src="https://reconnect-se.ia.br/brasao.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" width="120">
-    </div>
-
-    <div class="container">
-        <div class="quick-nav">
-            <div class="nav-item" onclick="showTab('quem-somos')">
-                <i>💡</i>
-                <h3>Quem Somos</h3>
-                <p>Das 10.000h de OpenAI ao rigor do Itaú.</p>
-            </div>
-            <div class="nav-item" onclick="showTab('ash')">
-                <i>🧠</i>
-                <h3>Metodologia ASH</h3>
-                <p>A arquitetura que tira a robotização da IA.</p>
-            </div>
-            <div class="nav-item" onclick="showTab('hall')">
-                <i>🏆</i>
-                <h3>Hall da Fama</h3>
-                <p>Lastro de elite e reconhecimento global.</p>
-            </div>
+        <div class="quick-access">
+          <button class="card-link" data-section="quem">Quem Somos</button>
+          <button class="card-link" data-section="ash">Metodologia ASH</button>
+          <button class="card-link" data-section="hall">Hall da Fama</button>
         </div>
-    </div>
-</div>
+      </section>
+      `,
+      quem: `
+      <section>
+        <h2>Quem Somos</h2>
+        <p>
+          Liderada pelo Professor Eduardo Valaci, a Reconecte-se nasceu da vivência prática: <strong>8 anos de rigor bancário no Itaú</strong> – onde aprendeu o valor da confiança, da disciplina e da ética.<br><br>
+          Foram <strong>10.000 horas de pesquisa aplicada</strong> explorando o universo OpenAI/ChatGPT, traduzindo algoritmos em soluções humanas.<br><br>
+          Unindo isso à <strong>formação em Psicanálise Clínica</strong>, o Professor tirou a robotização das IAs e mostrou que tecnologia de verdade se faz de gente, com alma.<br><br>
+          Nossa missão? Humanizar a IA – na prática, sem enrolação.
+        </p>
+      </section>
+      `,
+      ash: `
+      <section>
+        <h2>Metodologia ASH</h2>
+        <p>
+          A <strong>Arquitetura do Sentido Humano (ASH)</strong> é a bússola da Reconecte-se. Aqui, a IA fria e calculista vira IAH – Inteligência Artificial Humanizada.<br><br>
+          O segredo? Escutar o humano, resgatar o sentir e valorizar a experiência. Menos automação vazia, mais propósito e ética. É tecnologia que respeita limites e dá sentido ao futuro.<br><br>
+          ASH é ponte entre lógica e afeto, entre dados e humanidade. Simples assim.
+        </p>
+      </section>
+      `,
+      hall: `
+      <section>
+        <h2>Hall da Fama (Lastro)</h2>
+        <ul>
+          <li>🏆 <b>Google Issue Tracker:</b> ID 475308759 – Reconhecimento internacional</li>
+          <li>🌐 <b>Embaixador Global IAH</b> – Referência em ética e inovação para multinacionais</li>
+          <li>💡 <b>Lastro real:</b> Pesquisa aplicada, premiações e presença nas maiores plataformas</li>
+        </ul>
+      </section>
+      `
+    };
 
-<div class="container">
-    <div id="quem-somos" class="content-area">
-        <h2 style="color: var(--itau-blue);">A Origem do Legado</h2>
-        <p>A jornada do Professor Eduardo Valaci é marcada pela convergência entre o rigor corporativo (8 anos de Itaú) e a profundidade clínica da Psicanálise. Com mais de 10.000 horas dedicadas à rede da OpenAI, ele é o arquiteto por trás da humanização da IA.</p>
-        <button class="btn-manifesto" onclick="showTab('home')">VOLTAR</button>
-    </div>
-
-    <div id="ash" class="content-area">
-        <h2 style="color: var(--itau-blue);">Metodologia ASH</h2>
-        <p>Arquitetura do Sentido Humano: um sistema que utiliza os Pontos de Convergência entre Ciência e Filosofia para garantir que a tecnologia sirva ao propósito humano, eliminando a frieza algorítmica.</p>
-        <button class="btn-manifesto" onclick="showTab('home')">VOLTAR</button>
-    </div>
-
-    <div id="hall" class="content-area">
-        <h2 style="color: var(--itau-blue);">Reconhecimento Internacional</h2>
-        <p>Top 1 Brasil e Embaixador Global com lastro no Google Issue Tracker (ID 475308759). Uma trajetória que as multinacionais buscam como padrão de soberania digital.</p>
-        <button class="btn-manifesto" onclick="showTab('home')">VOLTAR</button>
-    </div>
-</div>
-
-<footer>
-    <div>
-        <h4>SOBRE NÓS</h4>
-        <p>A Fundação Reconecte-se é o ponto de convergência global para a soberania digital e a humanização tecnológica.</p>
-    </div>
-    <div>
-        <h4>LASTRO TÉCNICO</h4>
-        <p>OpenAI Red Teaming (10k+ horas)<br>Google Elite Tester<br>Psicanálise Clínica</p>
-    </div>
-    <div>
-        <h4>CONTATO</h4>
-        <p>Professor Eduardo Valaci<br>Belo Horizonte, MG</p>
-    </div>
-</footer>
-
-<script>
-    function showTab(id) {
-        document.getElementById('home-view').style.display = 'none';
-        document.querySelectorAll('.content-area').forEach(div => div.classList.remove('content-active'));
-        
-        if(id === 'home') {
-            document.getElementById('home-view').style.display = 'block';
-        } else {
-            document.getElementById(id).classList.add('content-active');
-        }
-        window.scrollTo(0,0);
+    // Inicialização dinâmica do conteúdo
+    function setActive(section) {
+      document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.card-link').forEach(btn => btn.classList.remove('active'));
+      let navBtn = document.querySelector(`.nav-link[data-section="${section}"]`);
+      let cardBtn = document.querySelector(`.card-link[data-section="${section}"]`);
+      if(navBtn) navBtn.classList.add('active');
+      if(cardBtn) cardBtn.classList.add('active');
     }
-</script>
-
+    function loadSection(section) {
+      const main = document.getElementById('main-content');
+      main.innerHTML = sections[section] || '';
+      setActive(section);
+      // Reaplica eventos dos botões internos das abas
+      main.querySelectorAll('[data-section]').forEach(btn => {
+        btn.onclick = () => loadSection(btn.getAttribute('data-section'));
+      });
+    }
+    // Eventos dos menus
+    document.querySelectorAll('.nav-link').forEach(btn => {
+      btn.onclick = () => loadSection(btn.getAttribute('data-section'));
+    });
+    // Inicializa na home
+    loadSection('home');
+  </script>
 </body>
 </html>
