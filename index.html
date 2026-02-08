@@ -1,390 +1,355 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fundação Reconecte-se | Portal Oficial</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-main: #F8F9FA;
-      --navbar: #003399;
-      --orange: #EC7000;
-      --white: #FFF;
-      --gray-text: #444;
-      --gray-light: #e6e7eb;
-    }
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', 'Open Sans', Arial, sans-serif;
-      background: var(--bg-main);
-      color: var(--gray-text);
-      min-height: 100vh;
-    }
-    .navbar {
-      background: var(--navbar);
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 8px #00339922;
-    }
-    .navbar-title {
-      font-weight: 700;
-      font-size: 1.4rem;
-      letter-spacing: 1px;
-    }
-    .nav-links {
-      display: flex;
-      gap: 1.2rem;
-      align-items: center;
-    }
-    .nav-link {
-      background: none;
-      border: none;
-      color: var(--white);
-      font-size: 1rem;
-      font-family: inherit;
-      cursor: pointer;
-      padding: 0.5rem 0.8rem;
-      border-radius: 5px;
-      transition: background .2s;
-    }
-    .nav-link.active,
-    .nav-link:hover {
-      background: #002266;
-    }
-    .cta-btn {
-      background: var(--orange);
-      color: var(--white);
-      border: none;
-      font-weight: 600;
-      font-size: 1rem;
-      border-radius: 5px;
-      padding: 0.6rem 1.1rem;
-      margin-left: 1.5rem;
-      cursor: pointer;
-      transition: background .2s;
-      box-shadow: 0 2px 8px #ec700055;
-    }
-    .cta-btn:hover {
-      background: #c15800;
-    }
-    .container {
-      display: flex;
-      gap: 2rem;
-      margin: 0 auto;
-      max-width: 1200px;
-      padding: 2rem 1rem 1rem 1rem;
-      align-items: flex-start;
-    }
-    .main-content {
-      flex: 3;
-      min-width: 0;
-      background: var(--white);
-      border-radius: 16px;
-      box-shadow: 0 2px 12px #0001;
-      padding: 2.5rem 2rem;
-      margin-bottom: 2rem;
-      transition: box-shadow 0.2s;
-    }
-    .dashboard-home {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-    .banner {
-      background: linear-gradient(90deg, #003399 50%, #F8F9FA 100%);
-      color: var(--white);
-      padding: 2.2rem 1.5rem;
-      border-radius: 12px;
-      margin-bottom: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.7rem;
-      box-shadow: 0 3px 14px #00339922;
-    }
-    .banner h1 {
-      font-size: 2.2rem;
-      margin: 0 0 0.5rem 0;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-    .banner p {
-      font-size: 1.18rem;
-      margin: 0;
-      font-weight: 400;
-    }
-    .quick-access {
-      display: flex;
-      gap: 1.4rem;
-      flex-wrap: wrap;
-    }
-    .card-link {
-      flex: 1;
-      min-width: 200px;
-      background: var(--gray-light);
-      color: var(--navbar);
-      border-radius: 10px;
-      box-shadow: 0 2px 6px #00339911;
-      padding: 1.3rem 1.2rem;
-      text-align: center;
-      font-weight: 600;
-      font-size: 1.13rem;
-      letter-spacing: 0.5px;
-      border: none;
-      cursor: pointer;
-      transition: box-shadow 0.17s, background 0.2s;
-    }
-    .card-link:hover,
-    .card-link.active {
-      background: var(--orange);
-      color: var(--white);
-      box-shadow: 0 4px 20px #ec700040;
-    }
-    .live-feed {
-      flex: 1;
-      min-width: 220px;
-      max-width: 290px;
-      background: var(--white);
-      border-radius: 16px;
-      box-shadow: 0 2px 12px #00339911;
-      padding: 1.2rem 1rem;
-      margin-bottom: 2rem;
-      position: sticky;
-      top: 5.5rem;
-      height: fit-content;
-    }
-    .live-feed-title {
-      color: var(--orange);
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      letter-spacing: 1px;
-    }
-    .live-item {
-      background: var(--gray-light);
-      color: var(--gray-text);
-      border-radius: 7px;
-      padding: 0.7rem 0.8rem;
-      margin-bottom: 0.7rem;
-      font-size: 0.97rem;
-    }
-    .footer {
-      width: 100%;
-      background: var(--bg-main);
-      padding: 2rem 1rem 1rem 1rem;
-      margin-top: 2rem;
-      box-shadow: 0 -1px 16px #00339914;
-      display: flex;
-      justify-content: center;
-      border-radius: 16px 16px 0 0;
-      flex-wrap: wrap;
-    }
-    .footer-col {
-      flex: 1;
-      min-width: 180px;
-      max-width: 320px;
-      padding: 0 1.3rem;
-      margin-bottom: 1.3rem;
-    }
-    .footer-title {
-      font-weight: 700;
-      color: var(--navbar);
-      margin-bottom: 0.8rem;
-      font-size: 1.1rem;
-      letter-spacing: 0.5px;
-    }
-    .footer-link,
-    .footer-text {
-      color: var(--gray-text);
-      font-size: 1rem;
-      text-decoration: none;
-      margin-bottom: 0.6rem;
-      display: block;
-      transition: color .17s;
-    }
-    .footer-link:hover {
-      color: var(--orange);
-      text-decoration: underline;
-    }
-    .footer-cta {
-      margin-top: 1.1rem;
-      background: var(--orange);
-      color: var(--white);
-      border: none;
-      font-weight: 600;
-      border-radius: 6px;
-      padding: 0.6rem 1rem;
-      cursor: pointer;
-      transition: background .2s;
-      display: block;
-      width: fit-content;
-    }
-    .footer-cta:hover {
-      background: #c15800;
-    }
-    /* Responsividade */
-    @media (max-width: 900px) {
-      .container {
-        flex-direction: column;
-        gap: 0;
-      }
-      .main-content, .live-feed {
-        margin: 0 0 2rem 0;
-        max-width: 100vw;
-      }
-      .quick-access {
-        flex-direction: column;
-      }
-    }
-    @media (max-width: 600px) {
-      .navbar, .footer {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem;
-      }
-      .nav-links {
-        margin-top: 1rem;
-        flex-wrap: wrap;
-      }
-      .container {
-        padding: 1rem 0.3rem;
-      }
-      .main-content, .live-feed {
-        padding: 1.1rem 0.7rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="navbar-title">Fundação Reconecte‑se</div>
-    <div class="nav-links">
-      <button class="nav-link active" data-section="home">Home</button>
-      <button class="nav-link" data-section="quem">Quem Somos</button>
-      <button class="nav-link" data-section="ash">Metodologia ASH</button>
-      <button class="nav-link" data-section="hall">Hall da Fama</button>
-      <button class="cta-btn" onclick="window.open('https://medium.com/@eduvalaci/manifesto-da-soberania-digital-humana-2026-e2b4a2a9c8fb','_blank')">Manifesto</button>
-    </div>
-  </nav>
+import React, { useState } from 'react';
+import {
+  Menu, X, ArrowRight, Download, Share2, Users,
+  Lightbulb, Shield, Globe, Award, ChevronDown, Medal, Timeline, Mail, MapPin
+} from 'lucide-react';
 
-  <!-- DASHBOARD (SINGLE PAGE) -->
-  <div class="container">
-    <main class="main-content" id="main-content">
-      <!-- Conteúdo dinâmico será injetado aqui -->
-    </main>
-    <aside class="live-feed" id="live-feed">
-      <div class="live-feed-title">Live Feed | Atualizações IAH</div>
-      <div class="live-item">🔸 Meta anuncia integração IAH nos Reels e Threads (02/2026)</div>
-      <div class="live-item">🔹 OpenAI amplia premiação global para desenvolvedores de IA humanizada</div>
-      <div class="live-item">🔸 Google Issue Tracker reconhece ASH como referência em ética de IA</div>
-      <div class="live-item">🔹 Reconecte-se atinge marca de 10.000h em pesquisa aplicada</div>
-    </aside>
-  </div>
+// --- CONFIGURAÇÃO E DADOS ---
+const MANIFESTO_URL = "https://medium.com/@eduvalaci/manifesto-da-soberania-digital-humana-2026-e2b4a2a9c8fb";
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-col">
-      <div class="footer-title">Sobre a Fundação</div>
-      <div class="footer-text">
-        Fundada pelo Professor Eduardo Valaci, a Reconecte-se tem a missão de unir ciência, filosofia e teologia na prática. Trabalha pela humanização da IA e pelo resgate do sentido humano.
-      </div>
-    </div>
-    <div class="footer-col">
-      <div class="footer-title">Lastro Técnico</div>
-      <a class="footer-link" href="https://issuetracker.google.com/issues/475308759" target="_blank">
-        Google Issue Tracker: #475308759
-      </a>
-      <span class="footer-text">Embaixador Global IAH | Referência em Multinacionais</span>
-      <button class="footer-cta" onclick="window.open('https://medium.com/@eduvalaci/manifesto-da-soberania-digital-humana-2026-e2b4a2a9c8fb','_blank')">Manifesto da Soberania Digital</button>
-    </div>
-    <div class="footer-col">
-      <div class="footer-title">Contato</div>
-      <div class="footer-text">E-mail: contato@reconecte-se.org<br>LinkedIn: /in/eduvalaci<br>Minas Gerais – Brasil</div>
-    </div>
-  </footer>
+// Links de Navegação
+const navLinks = [
+  { name: 'O Ecossistema', id: 'ecosystem' },
+  { name: 'Manifesto', id: 'manifesto' },
+  { name: 'Hall da Fama', id: 'hall' },
+  { name: 'Linha do Tempo', id: 'timeline' },
+  { name: 'Contato', id: 'contact' },
+];
 
-  <script>
-    // Conteúdo das seções
-    const sections = {
-      home: `
-      <section class="dashboard-home">
-        <div class="banner">
-          <h1>Pontos de Convergência</h1>
-          <p>Na Fundação Reconecte-se, ciência, filosofia e teologia caminham juntas. Acreditamos que só a união desses pilares permite uma IAH (Inteligência Artificial Humanizada) de verdade: ética, sentida e com propósito.</p>
+// Dados da Linha do Tempo
+const timelineEvents = [
+  {
+    year: "2018",
+    title: "Primeiras Experimentações",
+    description: "A Fundação Reconecte-se inicia os estudos em Inteligência Artificial aplicada ao humano, marcando o início da pesquisa prática que deu origem ao ASH.",
+  },
+  {
+    year: "2020",
+    title: "Publicação do Método ASH",
+    description: "Primeira versão da Arquitetura do Sentido Humano é publicada, influenciando profissionais no Brasil e exterior.",
+  },
+  {
+    year: "2023",
+    title: "Reconhecimento Internacional",
+    description: "Premiação SportHunter. Fundação torna-se referência global em IA Humanizada, com metodologia replicada por multinacionais.",
+  },
+  {
+    year: "2026",
+    title: "Medalha Horse",
+    description: "Recebimento da Medalha Horse, premiação única mundial concedida por destaque inovador no calendário ocidental.",
+    medal: true,
+  },
+];
+
+// Dados do Hall da Fama
+const fameCards = [
+  {
+    icon: <Globe size={28} className="text-indigo-500" />,
+    title: "Reconhecimento Global",
+    badge: "SportHunter",
+    desc: "Metodologia ASH validada internacionalmente e citada como referência em inovação e ética por empresas multinacionais.",
+    date: "2023",
+  },
+  {
+    icon: <Medal size={28} className="text-yellow-500" />,
+    title: "Medalha Horse 2026",
+    badge: "ÚNICO NO MUNDO",
+    desc: "Premiação concedida exclusivamente à Fundação Reconecte-se. Marco histórico em IA Humanizada, reconhecido internacionalmente.",
+    date: "Jan/2026",
+    medal: true,
+  },
+  {
+    icon: <Award size={28} className="text-teal-500" />,
+    title: "Beta Feedverso",
+    badge: "Meta & OpenAI",
+    desc: "Reconhecimento pelo pioneirismo em arquitetura de ecossistemas digitais. Referência em treinamento e consultoria para big techs.",
+    date: "2024",
+  },
+];
+
+export default function ReconecteSeFoundation() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Função de Scroll Suave
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-800 selection:bg-teal-100 selection:text-teal-900">
+
+      {/* --- NAVBAR --- */}
+      <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
+            {/* LOGO */}
+            <div
+              onClick={() => scrollToSection('home')}
+              className="flex-shrink-0 cursor-pointer flex items-center gap-2 group"
+            >
+              <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-teal-500 to-indigo-600 group-hover:scale-110 transition-transform"></div>
+              <span className="font-bold text-xl tracking-tight text-slate-900">
+                Fundação <span className="text-teal-600">Reconecte-se</span>
+              </span>
+            </div>
+
+            {/* DESKTOP MENU */}
+            <div className="hidden md:flex space-x-8">
+              {navLinks.map((link) => (
+                <button
+                  key={link.name}
+                  onClick={() => scrollToSection(link.id)}
+                  className="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors uppercase tracking-wide"
+                >
+                  {link.name}
+                </button>
+              ))}
+            </div>
+
+            {/* MOBILE MENU BUTTON */}
+            <div className="md:hidden flex items-center">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-slate-600 hover:text-teal-600 focus:outline-none"
+              >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
+          </div>
         </div>
-        <div class="quick-access">
-          <button class="card-link" data-section="quem">Quem Somos</button>
-          <button class="card-link" data-section="ash">Metodologia ASH</button>
-          <button class="card-link" data-section="hall">Hall da Fama</button>
+
+        {/* MOBILE MENU DROPDOWN */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-white border-t border-slate-100">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg">
+              {navLinks.map((link) => (
+                <button
+                  key={link.name}
+                  onClick={() => scrollToSection(link.id)}
+                  className="block w-full text-left px-3 py-4 text-base font-medium text-slate-600 hover:text-teal-600 hover:bg-slate-50 rounded-md"
+                >
+                  {link.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </nav>
+
+      {/* --- HERO SECTION --- */}
+      <section id="home" className="pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 relative overflow-hidden">
+        {/* Background Blobs */}
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-teal-50 blur-3xl opacity-50"></div>
+        <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-indigo-50 blur-3xl opacity-50"></div>
+
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-teal-700 text-xs font-semibold tracking-wider uppercase mb-6">
+            O Legado Original
+          </div>
+          <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-8 leading-tight">
+            Um novo ecossistema para o <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-indigo-600">sentido humano</span> e inovação autêntica.
+          </h1>
+          <p className="mt-4 max-w-2xl mx-auto text-xl text-slate-500 mb-10 leading-relaxed">
+            Reconectando tecnologia, propósito e a essência de quem somos. Sem siglas complexas, apenas impacto real.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href={MANIFESTO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-slate-900 text-white rounded-full font-semibold hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+            >
+              Ler o Manifesto <ArrowRight size={18} />
+            </a>
+            <button
+              onClick={() => scrollToSection('ecosystem')}
+              className="px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-full font-semibold hover:border-teal-200 hover:bg-teal-50 transition-all flex items-center justify-center gap-2"
+            >
+              Explorar Ecossistema <ChevronDown size={18} />
+            </button>
+          </div>
         </div>
       </section>
-      `,
-      quem: `
-      <section>
-        <h2>Quem Somos</h2>
-        <p>
-          Liderada pelo Professor Eduardo Valaci, a Reconecte-se nasceu da vivência prática: <strong>8 anos de rigor bancário no Itaú</strong> – onde aprendeu o valor da confiança, da disciplina e da ética.<br><br>
-          Foram <strong>10.000 horas de pesquisa aplicada</strong> explorando o universo OpenAI/ChatGPT, traduzindo algoritmos em soluções humanas.<br><br>
-          Unindo isso à <strong>formação em Psicanálise Clínica</strong>, o Professor tirou a robotização das IAs e mostrou que tecnologia de verdade se faz de gente, com alma.<br><br>
-          Nossa missão? Humanizar a IA – na prática, sem enrolação.
-        </p>
-      </section>
-      `,
-      ash: `
-      <section>
-        <h2>Metodologia ASH</h2>
-        <p>
-          A <strong>Arquitetura do Sentido Humano (ASH)</strong> é a bússola da Reconecte-se. Aqui, a IA fria e calculista vira IAH – Inteligência Artificial Humanizada.<br><br>
-          O segredo? Escutar o humano, resgatar o sentir e valorizar a experiência. Menos automação vazia, mais propósito e ética. É tecnologia que respeita limites e dá sentido ao futuro.<br><br>
-          ASH é ponte entre lógica e afeto, entre dados e humanidade. Simples assim.
-        </p>
-      </section>
-      `,
-      hall: `
-      <section>
-        <h2>Hall da Fama (Lastro)</h2>
-        <ul>
-          <li>🏆 <b>Google Issue Tracker:</b> ID 475308759 – Reconhecimento internacional</li>
-          <li>🌐 <b>Embaixador Global IAH</b> – Referência em ética e inovação para multinacionais</li>
-          <li>💡 <b>Lastro real:</b> Pesquisa aplicada, premiações e presença nas maiores plataformas</li>
-        </ul>
-      </section>
-      `
-    };
 
-    // Inicialização dinâmica do conteúdo
-    function setActive(section) {
-      document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
-      document.querySelectorAll('.card-link').forEach(btn => btn.classList.remove('active'));
-      let navBtn = document.querySelector(`.nav-link[data-section="${section}"]`);
-      let cardBtn = document.querySelector(`.card-link[data-section="${section}"]`);
-      if(navBtn) navBtn.classList.add('active');
-      if(cardBtn) cardBtn.classList.add('active');
-    }
-    function loadSection(section) {
-      const main = document.getElementById('main-content');
-      main.innerHTML = sections[section] || '';
-      setActive(section);
-      // Reaplica eventos dos botões internos das abas
-      main.querySelectorAll('[data-section]').forEach(btn => {
-        btn.onclick = () => loadSection(btn.getAttribute('data-section'));
-      });
-    }
-    // Eventos dos menus
-    document.querySelectorAll('.nav-link').forEach(btn => {
-      btn.onclick = () => loadSection(btn.getAttribute('data-section'));
-    });
-    // Inicializa na home
-    loadSection('home');
-  </script>
-</body>
-</html>
+      {/* --- ECOSSISTEMA --- */}
+      <section id="ecosystem" className="py-24 bg-white relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">A Arquitetura da Fundação</h2>
+            <p className="text-slate-500 max-w-2xl mx-auto">
+              A Fundação Reconecte-se é a raiz. Dela, nascem projetos vivos e metodologias transformadoras, inspirando instituições no Brasil e no exterior.
+            </p>
+          </div>
+
+          {/* Arvore Visual */}
+          <div className="relative max-w-5xl mx-auto">
+            {/* Raiz Central */}
+            <div className="flex justify-center mb-12 relative z-10">
+              <div className="w-48 h-48 rounded-full bg-white border-4 border-slate-100 shadow-2xl flex flex-col items-center justify-center text-center p-4 relative z-20">
+                <Shield className="w-12 h-12 text-teal-600 mb-2" />
+                <h3 className="font-bold text-lg text-slate-900 leading-tight">Fundação<br/>Reconecte-se</h3>
+                <span className="text-xs text-slate-400 mt-1 uppercase tracking-widest">Matriz</span>
+              </div>
+            </div>
+
+            {/* Galhos */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center relative z-10">
+              {/* ASH */}
+              <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-teal-200 hover:shadow-lg transition-all group">
+                <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mx-auto mb-4 text-indigo-600 group-hover:scale-110 transition-transform">
+                  <Lightbulb size={24} />
+                </div>
+                <h4 className="text-xl font-bold text-slate-900 mb-2">ASH</h4>
+                <p className="text-sm font-semibold text-indigo-600 mb-3 uppercase tracking-wider">Arquitetura do Sentido Humano</p>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  Metodologia pioneira de IA Humanizada, replicada em diversos contextos e premiada internacionalmente.
+                </p>
+              </div>
+
+              {/* Kids */}
+              <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-teal-200 hover:shadow-lg transition-all group">
+                <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mx-auto mb-4 text-teal-600 group-hover:scale-110 transition-transform">
+                  <Users size={24} />
+                </div>
+                <h4 className="text-xl font-bold text-slate-900 mb-2">Reconecte-se Kids</h4>
+                <p className="text-sm font-semibold text-teal-600 mb-3 uppercase tracking-wider">Educação & Futuro</p>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  Preparando novas gerações para utilizar tecnologia como ferramenta ética, desenvolvendo pensamento crítico e humano.
+                </p>
+              </div>
+
+              {/* Automação */}
+              <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-teal-200 hover:shadow-lg transition-all group">
+                <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mx-auto mb-4 text-rose-500 group-hover:scale-110 transition-transform">
+                  <Share2 size={24} />
+                </div>
+                <h4 className="text-xl font-bold text-slate-900 mb-2">Automação Humanizada</h4>
+                <p className="text-sm font-semibold text-rose-500 mb-3 uppercase tracking-wider">Tech & Processos</p>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  Sistemas práticos, conectando sentido humano a processos inovadores e eficientes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- MANIFESTO --- */}
+      <section id="manifesto" className="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-teal-500 rounded-full blur-[100px] opacity-20"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500 rounded-full blur-[100px] opacity-20"></div>
+
+        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+          <Award className="w-12 h-12 text-teal-400 mx-auto mb-6" />
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 font-serif italic">Manifesto Reconecte-se</h2>
+          <div className="prose prose-lg prose-invert mx-auto mb-12 text-slate-300">
+            <p className="text-xl leading-relaxed">
+              "A Fundação Reconecte-se nasceu para criar novos eixos entre humano e tecnologia. Não se trata de ser contra a máquina, mas a favor do sentido. Todo sistema aqui começa com propósito e termina com impacto real — e quem quiser saber mais pode acessar o manifesto original."
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row justify-center gap-6 items-center">
+            <a
+              href={MANIFESTO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 bg-teal-600 hover:bg-teal-500 rounded-lg font-semibold transition-colors flex items-center gap-2"
+            >
+              <Download size={20} /> Acessar Manifesto
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* --- HALL DA FAMA --- */}
+      <section id="hall" className="py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-16 text-center">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Hall da Fama & Reconhecimento</h2>
+            <div className="w-20 h-1 bg-teal-500 rounded-full mx-auto"></div>
+            <p className="mt-4 text-slate-500">Premiações, marcos e ineditismos reconhecidos no Brasil e no exterior.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {fameCards.map((card, i) => (
+              <div key={i} className={`bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border-l-4 ${card.medal ? 'border-yellow-400' : 'border-indigo-200'}`}>
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <h3 className="font-bold text-lg text-slate-900">{card.title}</h3>
+                    <span className="text-xs font-semibold text-slate-400 uppercase">{card.badge}</span>
+                  </div>
+                  {card.icon}
+                </div>
+                <p className="text-slate-600 italic leading-relaxed mb-6">{card.desc}</p>
+                <div className="border-t border-slate-100 pt-4 text-xs text-slate-400">{card.date}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- LINHA DO TEMPO --- */}
+      <section id="timeline" className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4 flex justify-center items-center gap-2">
+              <Timeline size={32} className="text-indigo-600" /> Linha do Tempo ASH
+            </h2>
+            <p className="text-slate-500">A evolução cronológica da nossa arquitetura.</p>
+          </div>
+
+          <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-slate-200 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
+            {timelineEvents.map((event, index) => (
+              <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+
+                {/* Ícone no Centro da Linha */}
+                <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-slate-200 group-hover:bg-teal-500 transition-colors shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow">
+                  <div className="w-2 h-2 bg-slate-500 rounded-full group-hover:bg-white transition-colors"></div>
+                </div>
+
+                {/* Conteúdo do Card */}
+                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 bg-slate-50 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-teal-600">{event.year}</span>
+                    {event.medal && <Medal size={16} className="text-yellow-500" />}
+                  </div>
+                  <h3 className="font-bold text-slate-900 mb-2">{event.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{event.description}</p>
+                </div>
+
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- CONTATO / RODAPÉ --- */}
+      <section id="contact" className="py-16 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h2 className="text-2xl font-bold text-slate-900 mb-8">Conecte-se Conosco</h2>
+          <div className="flex flex-col md:flex-row justify-center gap-8 mb-12">
+            <div className="flex items-center justify-center gap-3 text-slate-600">
+              <Mail className="text-teal-600" />
+              <span>contato@reconecte-se.ia.br</span>
+            </div>
+            <div className="flex items-center justify-center gap-3 text-slate-600">
+              <MapPin className="text-teal-600" />
+              <span>Belo Horizonte, MG</span>
+            </div>
+          </div>
+
+          <div className="border-t border-slate-200 pt-8 mt-8">
+            <p className="text-slate-400 text-sm">
+              &copy; {new Date().getFullYear()} Fundação Reconecte-se. Todos os direitos reservados.
+              <br/>Desenvolvido com ASH.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+}
