@@ -3,147 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundação Reconecte-se | Soberania Google</title>
+    <title>Fundação Reconecte-se | Portal Oficial</title>
     <style>
-        :root { 
-            --gelo: #F5F5F7; 
-            --branco: #FFFFFF;
-            --g-azul: #4285F4;
-            --g-vermelho: #EA4335;
-            --g-amarelo: #FBBC05;
-            --g-verde: #34A853;
-            --texto: #202124;
-        }
+        :root { --gelo: #F8F9FA; --branco: #FFFFFF; --tech-blue: #00A3FF; --texto: #1C1C1E; --borda: #E5E5E7; }
+        body { background-color: var(--gelo); font-family: 'Inter', sans-serif; color: var(--texto); margin: 0; }
         
-        body { 
-            background-color: var(--gelo); 
-            font-family: 'Google Sans', Roboto, Arial, sans-serif; 
-            color: var(--texto); 
-            margin: 0; 
-            -webkit-font-smoothing: antialiased;
+        /* Header */
+        header { padding: 40px; text-align: center; background: var(--branco); border-bottom: 1px solid var(--borda); }
+        .logo { width: 80px; margin-bottom: 15px; }
+
+        .main-layout { display: grid; grid-template-columns: 1fr 300px; gap: 30px; max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+
+        /* Grid de Quadrinhos (Menu Principal) */
+        .grid-menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .card-menu { 
+            background: var(--branco); padding: 40px; border-radius: 20px; text-align: center; 
+            text-decoration: none; color: var(--texto); font-weight: 700; font-size: 1.2rem;
+            border: 1px solid var(--borda); transition: 0.3s; box-shadow: 0 4px 12px rgba(0,0,0,0.03);
         }
+        .card-menu:hover { transform: translateY(-5px); border-color: var(--tech-blue); box-shadow: 0 10px 25px rgba(0,163,255,0.1); }
 
-        header { 
-            padding: 80px 20px; 
-            text-align: center; 
-            background: var(--branco); 
-            border-bottom: 4px solid;
-            border-image: linear-gradient(to right, var(--g-azul), var(--g-vermelho), var(--g-amarelo), var(--g-verde)) 1;
-        }
+        /* Feed Lateral (O Motor Vivo) */
+        .sidebar { background: var(--branco); padding: 25px; border-radius: 20px; border: 1px solid var(--borda); height: fit-content; }
+        .sidebar h4 { margin-top: 0; color: var(--tech-blue); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+        .news-item { font-size: 0.9rem; border-bottom: 1px solid var(--gelo); padding: 12px 0; }
+        .news-item:last-child { border: none; }
 
-        .brasao-interativo { 
-            width: 150px; 
-            filter: drop-shadow(0 8px 15px rgba(0,0,0,0.1)); 
-            transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border-radius: 50%;
-            padding: 5px;
-            background: linear-gradient(45deg, var(--g-azul), var(--g-vermelho), var(--g-amarelo), var(--g-verde));
-        }
+        /* Seções de Conteúdo */
+        .content-section { background: var(--branco); padding: 50px; border-radius: 20px; margin-top: 30px; border: 1px solid var(--borda); display: none; }
+        .content-section.active { display: block; animation: fadeIn 0.5s; }
 
-        .brasao-interativo:hover { transform: scale(1.1) rotate(5deg); }
+        /* Hall da Fama */
+        .medal-box { display: flex; gap: 15px; margin-top: 20px; }
+        .medal-tag { background: var(--gelo); padding: 10px 20px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; border: 1px solid var(--borda); }
 
-        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
-        
-        .manifesto-box { 
-            font-size: 2.2rem; 
-            text-align: center; 
-            font-weight: 700; 
-            margin-bottom: 60px; 
-            background: linear-gradient(to right, var(--g-azul), var(--g-vermelho), var(--g-amarelo), var(--g-verde));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Cards com bordas interativas Google */
-        .step { 
-            position: relative; 
-            margin-bottom: 30px; 
-            background: var(--branco); 
-            padding: 30px; 
-            border-radius: 15px; 
-            border-left: 6px solid var(--g-azul);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: 0.3s;
-        }
-        .step:nth-child(2) { border-left-color: var(--g-vermelho); }
-        .step:nth-child(3) { border-left-color: var(--g-amarelo); }
-        .step:nth-child(4) { border-left-color: var(--g-verde); }
-
-        .hall-fama { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; }
-        
-        .medalha { 
-            background: var(--branco); 
-            padding: 20px; 
-            border-radius: 15px; 
-            text-align: center; 
-            border: 2px solid #eee;
-            transition: 0.3s;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* Hover Colorido */
-        .medalha:hover { 
-            border-color: var(--g-azul);
-            box-shadow: 0 10px 20px rgba(66, 133, 244, 0.15);
-            transform: translateY(-5px);
-        }
-
-        .btn-principal { 
-            display: block; 
-            text-align: center; 
-            background: var(--texto); 
-            color: var(--branco); 
-            padding: 20px; 
-            border-radius: 50px; 
-            text-decoration: none; 
-            font-weight: 700; 
-            margin-top: 50px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: 0.3s;
-        }
-
-        .btn-principal:hover { 
-            background: linear-gradient(to right, var(--g-azul), var(--g-vermelho));
-            transform: scale(1.02);
-        }
-
-        .secao-titulo { color: var(--g-azul); font-weight: bold; text-transform: uppercase; letter-spacing: 1px; text-align: center; margin-bottom: 20px; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="https://reconnect-se.ia.br/brasao.png" onerror="this.src='https://www.gstatic.com/images/branding/product/2x/googleg_96dp.png'" alt="Brasão" class="brasao-interativo">
-    <h1 style="font-size: 2.5rem; margin-top: 20px;">Fundação Reconecte-se</h1>
-    <p><b>Professor Eduardo Valaci</b> | Pioneiro Global & Embaixador IAH</p>
+    <img src="https://reconnect-se.ia.br/brasao.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" class="logo">
+    <h1>Fundação Reconecte-se</h1>
+    <p>Arquitetura do Sentido Humano (ASH)</p>
 </header>
 
-<div class="container">
-    <div class="manifesto-box">Soberania Digital Humana</div>
+<div class="main-layout">
+    <main>
+        <div id="home" class="grid-menu">
+            <a href="#quem-somos" class="card-menu" onclick="showSection('quem-somos')">💡 QUEM SOMOS</a>
+            <a href="#ash" class="card-menu" onclick="showSection('ash')">🧠 METODOLOGIA ASH</a>
+            <a href="#hall-fama" class="card-menu" onclick="showSection('hall-fama')">🏆 HALL DA FAMA</a>
+            <a href="https://medium.com/@eduardo6moraes/manifesto-da-soberania-digital-humana-6dc44594d3f6" target="_blank" class="card-menu">📜 MANIFESTO</a>
+        </div>
 
-    <div class="secao-titulo">Trajetória do Top 1 Brasil</div>
-    <div class="timeline">
-        <div class="step"><h3>10.000 Horas Uber</h3><p>Mestre de fluxos e comportamento humano em escala.</p></div>
-        <div class="step"><h3>8 Anos Itaú</h3><p>Rigor corporativo e gestão de processos bancários.</p></div>
-        <div class="step"><h3>Psicanálise Clínica</h3><p>A alma da metodologia ASH (Arquitetura do Sentido Humano).</p></div>
-        <div class="step"><h3>Mega Tester Multinacionais</h3><p>Único brasileiro com medalha de elite no Google Issue Tracker.</p></div>
-    </div>
+        <div id="quem-somos" class="content-section">
+            <button onclick="showSection('home')">← Voltar</button>
+            <h2>Quem Somos</h2>
+            <p>A Fundação Reconecte-se surgiu da necessidade de humanizar a tecnologia. Liderada pelo Professor Eduardo Valaci, unindo 8 anos de Itaú e 10.000 horas na rede OpenAI/ChatGPT.</p>
+        </div>
 
-    <div class="secao-titulo">Hall da Fama (Lastro Técnico)</div>
-    <div class="hall-fama">
-        <a href="https://issuetracker.google.com/issues/475308759" target="_blank" class="medalha">
-            <span style="font-size: 3rem;">🥇</span><br><strong>Google Global</strong>
-        </a>
-        <div class="medalha"><span style="font-size: 3rem;">🌍</span><br><strong>Embaixador</strong></div>
-        <div class="medalha"><span style="font-size: 3rem;">🛡️</span><br><strong>Elite Tester</strong></div>
-        <div class="medalha"><span style="font-size: 3rem;">🧠</span><br><strong>Método ASH</strong></div>
-    </div>
+        <div id="ash" class="content-section">
+            <button onclick="showSection('home')">← Voltar</button>
+            <h2>Metodologia ASH</h2>
+            <p>Arquitetura do Sentido Humano: O ponto onde a Psicanálise Clínica encontra o desenvolvimento de sistemas avançados.</p>
+        </div>
 
-    <a href="https://medium.com/@eduardo6moraes/manifesto-da-soberania-digital-humana-6dc44594d3f6" target="_blank" class="btn-principal">
-        Acessar Manifesto no Medium
-    </a>
+        <div id="hall-fama" class="content-section">
+            <button onclick="showSection('home')">← Voltar</button>
+            <h2>A Mente por Trás: Hall da Fama</h2>
+            <p>Reconhecimento internacional e lastro técnico indiscutível.</p>
+            <div class="medal-box">
+                <div class="medal-tag">🥇 Google Issue Tracker</div>
+                <div class="medal-tag">🌍 Embaixador Global</div>
+                <div class="medal-tag">🛡️ Elite Tester OpenAI</div>
+            </div>
+        </div>
+    </main>
+
+    <aside class="sidebar">
+        <h4>Tech Live Feed</h4>
+        <div id="news-feed">
+            <div class="news-item"><b>Mercado:</b> IA Generativa atinge novo pico de adoção corporativa.</div>
+            <div class="news-item"><b>Segurança:</b> Bug Bounty ganha força em multinacionais.</div>
+            <div class="news-item"><b>Global:</b> Reconecte-se inicia novos protocolos ASH.</div>
+        </div>
+    </aside>
 </div>
+
+<script>
+    function showSection(id) {
+        document.querySelectorAll('.content-section, #home').forEach(el => el.style.display = 'none');
+        if(id === 'home') {
+            document.getElementById('home').style.display = 'grid';
+        } else {
+            document.getElementById(id).classList.add('active');
+            document.getElementById(id).style.display = 'block';
+        }
+    }
+</script>
 
 </body>
 </html>
