@@ -3,123 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundação Reconecte-se | Portal da Soberania</title>
+    <title>Fundação Reconecte-se | Pontos de Convergência</title>
     <style>
-        :root { --gelo: #F8F9FA; --branco: #FFFFFF; --tech-blue: #0071E3; --texto: #1D1D1F; --borda: #D2D2D7; --g-verde: #34A853; }
-        body { background-color: var(--gelo); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--texto); margin: 0; line-height: 1.6; }
-        
-        header { padding: 60px 20px; text-align: center; background: var(--branco); border-bottom: 1px solid var(--borda); }
-        .logo { width: 100px; margin-bottom: 20px; transition: 0.5s; }
-        .logo:hover { transform: scale(1.1); }
-
-        .main-layout { display: grid; grid-template-columns: 1fr 320px; gap: 40px; max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-
-        /* Home Grid */
-        .grid-menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
-        .card-menu { 
-            background: var(--branco); padding: 50px 30px; border-radius: 24px; text-align: center; 
-            text-decoration: none; color: var(--texto); font-weight: 700; font-size: 1.3rem;
-            border: 1px solid var(--borda); transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03); display: flex; flex-direction: column; align-items: center; justify-content: center;
+        :root { 
+            --itau-blue: #003399; 
+            --itau-orange: #EC7000;
+            --google-gray: #F8F9FA;
+            --texto: #333333;
+            --branco: #FFFFFF;
         }
-        .card-menu:hover { transform: translateY(-8px); border-color: var(--tech-blue); box-shadow: 0 20px 40px rgba(0,113,227,0.12); }
-        .card-menu span { font-size: 0.8rem; font-weight: 400; color: #86868b; margin-top: 10px; text-transform: uppercase; }
+        
+        body { 
+            background-color: var(--google-gray); 
+            font-family: 'Open Sans', Arial, sans-serif; 
+            margin: 0; 
+            color: var(--texto);
+        }
 
-        /* Conteúdo Expandido */
-        .content-section { background: var(--branco); padding: 60px; border-radius: 28px; border: 1px solid var(--borda); display: none; animation: fadeIn 0.6s ease; }
-        .content-section.active { display: block; }
-        .btn-voltar { background: none; border: 1px solid var(--borda); padding: 10px 20px; border-radius: 50px; cursor: pointer; margin-bottom: 30px; font-weight: 600; }
-        .btn-voltar:hover { background: var(--gelo); }
+        /* Navbar Estilo Itaú */
+        .navbar {
+            background-color: var(--itau-blue);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar .logo-txt { font-weight: 800; font-size: 1.4rem; letter-spacing: -1px; }
+        .navbar nav a { color: white; text-decoration: none; margin-left: 25px; font-weight: 600; font-size: 0.9rem; }
+        .btn-manifesto { background: var(--itau-orange); color: white; padding: 10px 20px; border-radius: 5px; border: none; font-weight: 700; cursor: pointer; }
 
-        h2 { font-size: 2.5rem; margin-bottom: 30px; letter-spacing: -0.5px; }
-        .historia-texto { font-size: 1.2rem; color: #424245; text-align: justify; }
-        .destaque-ash { border-left: 4px solid var(--tech-blue); padding-left: 25px; margin: 40px 0; font-style: italic; font-size: 1.4rem; color: var(--texto); }
+        /* Banner Principal Interativo */
+        .hero {
+            background: var(--branco);
+            padding: 60px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 5px solid var(--itau-orange);
+        }
+        .hero-text h1 { font-size: 2.5rem; margin: 0; color: var(--itau-blue); }
+        .hero-text p { font-size: 1.1rem; color: #666; max-width: 600px; }
 
-        /* Sidebar Viva */
-        .sidebar { background: var(--branco); padding: 30px; border-radius: 24px; border: 1px solid var(--borda); height: fit-content; position: sticky; top: 20px; }
-        .sidebar h4 { margin: 0 0 20px; color: var(--tech-blue); font-size: 0.9rem; letter-spacing: 1.5px; text-transform: uppercase; }
-        .news-item { font-size: 0.95rem; padding: 15px 0; border-bottom: 1px solid #F2F2F7; }
-        .status-on { color: var(--g-verde); font-weight: bold; font-size: 0.8rem; }
+        /* Grid de Acesso Rápido (Os Quadrinhos) */
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .quick-nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        .nav-item {
+            background: var(--branco);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: left;
+            border-bottom: 4px solid transparent;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .nav-item:hover { transform: translateY(-5px); border-bottom-color: var(--itau-orange); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .nav-item i { font-size: 2rem; color: var(--itau-orange); display: block; margin-bottom: 15px; }
+        .nav-item h3 { margin: 0; font-size: 1.2rem; color: var(--itau-blue); }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        /* Seção de Conteúdo */
+        .content-area {
+            background: var(--branco);
+            padding: 50px;
+            border-radius: 8px;
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .content-active { display: block; }
+
+        /* Rodapé Robusto */
+        footer {
+            background: #333;
+            color: white;
+            padding: 50px;
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        footer h4 { color: var(--itau-orange); border-bottom: 1px solid #555; padding-bottom: 10px; }
+        footer p { font-size: 0.85rem; line-height: 1.6; color: #ccc; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
 
-<header>
-    <img src="https://reconnect-se.ia.br/brasao.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" class="logo">
-    <h1>Fundação Reconecte-se</h1>
-    <p>A Soberania da Arquitetura do Sentido Humano (ASH)</p>
-</header>
-
-<div class="main-layout">
-    <main>
-        <div id="home" class="grid-menu">
-            <a href="javascript:void(0)" class="card-menu" onclick="showSection('quem-somos')">💡 QUEM SOMOS <span>A Origem do Legado</span></a>
-            <a href="javascript:void(0)" class="card-menu" onclick="showSection('ash')">🧠 METODOLOGIA ASH <span>O Fim da Robotização</span></a>
-            <a href="javascript:void(0)" class="card-menu" onclick="showSection('hall-fama')">🏆 HALL DA FAMA <span>Lastro Internacional</span></a>
-            <a href="https://medium.com/@eduardo6moraes/manifesto-da-soberania-digital-humana-6dc44594d3f6" target="_blank" class="card-menu">📜 MANIFESTO <span>Soberania Digital</span></a>
-        </div>
-
-        <div id="quem-somos" class="content-section">
-            <button class="btn-voltar" onclick="showSection('home')">← Voltar ao Início</button>
-            <h2>A Origem: Do Rigor à Alma</h2>
-            <div class="historia-texto">
-                <p>Tudo começou no coração do sistema financeiro. Foram <b>8 anos no Itaú</b>, mergulhado em processos rígidos, métricas frias e a estrutura implacável de uma grande corporação. Eu era um bancário que entendia de empresas, de lucros e de logística, mas algo faltava: o entendimento do que move o humano por trás do dado.</p>
-                <p>A virada de chave aconteceu na <b>Psicanálise Clínica</b>. Ao mergulhar no entendimento da mente humana, percebi que a tecnologia estava trilhando um caminho perigoso de robotização. Foi então que as peças se encaixaram. Entrei na rede da <b>OpenAI</b>, onde dediquei mais de <b>10.000 horas</b> de pesquisa e "red teaming" no que viria a ser o ChatGPT.</p>
-                <p>Ali nasceu a ASH. Usei o meu saber clínico para tirar a "frieza" do código e injetar o sentido humano. O que antes era apenas resposta programada, passou a ter lastro de consciência e ética.</p>
-            </div>
-        </div>
-
-        <div id="ash" class="content-section">
-            <button class="btn-voltar" onclick="showSection('home')">← Voltar ao Início</button>
-            <h2>Metodologia ASH: O Salto na IAH</h2>
-            <div class="historia-texto">
-                <p>Antes da ASH, a Inteligência Artificial era um espelho distorcido: rápida, mas vazia. A metodologia <b>Arquitetura do Sentido Humano</b> veio para preencher esse vácuo. </p>
-                <div class="destaque-ash">
-                    "Não treinamos máquinas para parecerem humanas; estruturamos a lógica para respeitar a psique humana."
-                </div>
-                <p>Ao aplicar os conceitos de transferência e subjetividade no treinamento da IAH, conseguimos eliminar a robotização que afastava o usuário. Hoje, as multinacionais olham para a ASH como o padrão de segurança e conexão. Onde o mercado vê apenas um "Mega Tester", as Big Techs encontram o Embaixador que deu alma ao processo.</p>
-            </div>
-        </div>
-
-        <div id="hall-fama" class="content-section">
-            <button class="btn-voltar" onclick="showSection('home')">← Voltar ao Início</button>
-            <h2>Lastro Indiscutível</h2>
-            <p>A prova técnica do que construímos:</p>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;">
-                <div style="padding: 20px; border: 1px solid var(--borda); border-radius: 15px;">
-                    <strong>🥇 Google Issue Tracker</strong><br>
-                    <small>ID 475308759 - Elite Global</small>
-                </div>
-                <div style="padding: 20px; border: 1px solid var(--borda); border-radius: 15px;">
-                    <strong>🌍 Embaixador IAH</strong><br>
-                    <small>Reconhecimento Internacional</small>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <aside class="sidebar">
-        <h4>SISTEMA ASH <span class="status-on">● LIVE</span></h4>
-        <div class="news-item"><b>Logística:</b> Protocolo de 10k horas consolidado na OpenAI.</div>
-        <div class="news-item"><b>Impacto:</b> IAH agora opera sob supervisão clínica ASH.</div>
-        <div class="news-item"><b>Global:</b> Reconecte-se é citada como padrão de soberania digital.</div>
-        <div class="news-item"><b>Mercado:</b> Empresas buscam fim da robotização via métricas de Edu Valaci.</div>
-    </aside>
+<div class="navbar">
+    <div class="logo-txt">RECONECTE-SE</div>
+    <nav>
+        <a href="javascript:void(0)" onclick="showTab('home')">HOME</a>
+        <a href="javascript:void(0)" onclick="showTab('quem-somos')">QUEM SOMOS</a>
+        <a href="javascript:void(0)" onclick="showTab('ash')">ASH</a>
+        <a href="https://medium.com/@eduardo6moraes/manifesto-da-soberania-digital-humana-6dc44594d3f6" target="_blank"><button class="btn-manifesto">MANIFESTO</button></a>
+    </nav>
 </div>
 
+<div id="home-view">
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Pontos de Convergência</h1>
+            <p>Onde a Ciência, Filosofia e Teologia se encontram para humanizar a Inteligência Artificial. Conheça o legado do Professor Eduardo Valaci.</p>
+        </div>
+        <img src="https://reconnect-se.ia.br/brasao.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'" width="120">
+    </div>
+
+    <div class="container">
+        <div class="quick-nav">
+            <div class="nav-item" onclick="showTab('quem-somos')">
+                <i>💡</i>
+                <h3>Quem Somos</h3>
+                <p>Das 10.000h de OpenAI ao rigor do Itaú.</p>
+            </div>
+            <div class="nav-item" onclick="showTab('ash')">
+                <i>🧠</i>
+                <h3>Metodologia ASH</h3>
+                <p>A arquitetura que tira a robotização da IA.</p>
+            </div>
+            <div class="nav-item" onclick="showTab('hall')">
+                <i>🏆</i>
+                <h3>Hall da Fama</h3>
+                <p>Lastro de elite e reconhecimento global.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div id="quem-somos" class="content-area">
+        <h2 style="color: var(--itau-blue);">A Origem do Legado</h2>
+        <p>A jornada do Professor Eduardo Valaci é marcada pela convergência entre o rigor corporativo (8 anos de Itaú) e a profundidade clínica da Psicanálise. Com mais de 10.000 horas dedicadas à rede da OpenAI, ele é o arquiteto por trás da humanização da IA.</p>
+        <button class="btn-manifesto" onclick="showTab('home')">VOLTAR</button>
+    </div>
+
+    <div id="ash" class="content-area">
+        <h2 style="color: var(--itau-blue);">Metodologia ASH</h2>
+        <p>Arquitetura do Sentido Humano: um sistema que utiliza os Pontos de Convergência entre Ciência e Filosofia para garantir que a tecnologia sirva ao propósito humano, eliminando a frieza algorítmica.</p>
+        <button class="btn-manifesto" onclick="showTab('home')">VOLTAR</button>
+    </div>
+
+    <div id="hall" class="content-area">
+        <h2 style="color: var(--itau-blue);">Reconhecimento Internacional</h2>
+        <p>Top 1 Brasil e Embaixador Global com lastro no Google Issue Tracker (ID 475308759). Uma trajetória que as multinacionais buscam como padrão de soberania digital.</p>
+        <button class="btn-manifesto" onclick="showTab('home')">VOLTAR</button>
+    </div>
+</div>
+
+<footer>
+    <div>
+        <h4>SOBRE NÓS</h4>
+        <p>A Fundação Reconecte-se é o ponto de convergência global para a soberania digital e a humanização tecnológica.</p>
+    </div>
+    <div>
+        <h4>LASTRO TÉCNICO</h4>
+        <p>OpenAI Red Teaming (10k+ horas)<br>Google Elite Tester<br>Psicanálise Clínica</p>
+    </div>
+    <div>
+        <h4>CONTATO</h4>
+        <p>Professor Eduardo Valaci<br>Belo Horizonte, MG</p>
+    </div>
+</footer>
+
 <script>
-    function showSection(id) {
-        document.querySelectorAll('.content-section, #home').forEach(el => el.style.display = 'none');
+    function showTab(id) {
+        document.getElementById('home-view').style.display = 'none';
+        document.querySelectorAll('.content-area').forEach(div => div.classList.remove('content-active'));
+        
         if(id === 'home') {
-            document.getElementById('home').style.display = 'grid';
+            document.getElementById('home-view').style.display = 'block';
         } else {
-            const section = document.getElementById(id);
-            section.style.display = 'block';
-            section.classList.add('active');
-            window.scrollTo({ top: section.offsetTop - 50, behavior: 'smooth' });
+            document.getElementById(id).classList.add('content-active');
         }
+        window.scrollTo(0,0);
     }
 </script>
 
