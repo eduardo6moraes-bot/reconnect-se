@@ -9,16 +9,17 @@
   <style>
     body { font-family: 'Roboto', Arial, sans-serif; background: linear-gradient(135deg, #e0e7ff 0%, #fff 100%);}
     .glass { background: rgba(255,255,255,0.7); backdrop-filter: blur(6px); box-shadow: 0 4px 32px 0 rgba(76,81,255,0.10);}
-    .main-gradient { background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);}
-    .tech-card { border-radius: 1.5rem; box-shadow: 0 2px 24px 0 rgba(79,70,229,.12);}
-    .icon-bg { background: linear-gradient(120deg, #6366f1 50%, #e0e7ff 100%);}
-    .nav-glass { background: rgba(49, 46, 129, 0.80); backdrop-filter: blur(8px);}
-    .btn-cta { background: #3b82f6; color: #fff; border-radius: 999px; padding: 0.6rem 1.4rem; font-weight: 700;}
-    .btn-cta:hover { background: #6366f1;}
-    .section-title { font-size: 2rem; font-weight: 700; color: #312e81; margin-bottom: 0.3em;}
-    .section-desc { font-size: 1.15rem; color: #374151; margin-bottom: 2em;}
-    .timeline-dot { width: 22px; height: 22px; background: linear-gradient(135deg, #6366f1 60%, #eab308 100%); border-radius: 50%; border: 3px solid #fff;}
+    .main-gradient { background: linear-gradient(135deg, #14b8a6 0%, #6366f1 100%);}
+    .tech-card { border-radius: 1.5rem; box-shadow: 0 2px 24px 0 rgba(79,70,229,.08);}
+    .icon-bg { background: linear-gradient(120deg, #6366f1 60%, #e0e7ff 100%);}
+    .nav-glass { background: rgba(20, 184, 166, 0.90); backdrop-filter: blur(8px);}
+    .btn-cta { background: #6366f1; color: #fff; border-radius: 999px; padding: 0.7rem 1.6rem; font-weight: 700;}
+    .btn-cta:hover { background: #14b8a6;}
+    .section-title { font-size: 2.1rem; font-weight: 700; color: #0f172a; margin-bottom: 0.4em;}
+    .section-desc { font-size: 1.1rem; color: #334155; margin-bottom: 2em;}
+    .timeline-dot { width: 20px; height: 20px; background: linear-gradient(135deg, #6366f1 60%, #14b8a6 100%); border-radius: 50%; border: 3px solid #fff;}
     .timeline-bar { background: linear-gradient(180deg, #6366f1 0%, #e0e7ff 100%); width: 4px;}
+    ::selection { background: #14b8a6; color: #fff; }
   </style>
 </head>
 <body>
@@ -26,47 +27,49 @@
   <!-- NAVBAR -->
   <nav class="fixed top-0 left-0 w-full nav-glass z-40 shadow-lg">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
-      <div class="flex items-center gap-3">
-        <img src="https://cdn-icons-png.flaticon.com/512/2936/2936872.png" alt="Logo Reconecte-se" class="h-10 w-10 rounded-full bg-white p-1 shadow" />
+      <div class="flex items-center gap-3 cursor-pointer" onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'})">
+        <div class="h-10 w-10 rounded-full bg-gradient-to-tr from-teal-500 to-indigo-600 flex items-center justify-center shadow">
+          <img src="https://cdn-icons-png.flaticon.com/512/2936/2936872.png" alt="Logo Reconecte-se" class="h-8 w-8" />
+        </div>
         <span class="text-2xl font-bold text-white tracking-widest">Reconecte-se</span>
       </div>
-      <div class="hidden md:flex gap-5">
+      <div class="hidden md:flex gap-6">
         <a href="#home" class="text-white hover:text-yellow-300 transition">Home</a>
-        <a href="#ecossistema" class="text-white hover:text-yellow-300 transition">Ecossistema</a>
-        <a href="#ash" class="text-white hover:text-yellow-300 transition">ASH</a>
-        <a href="#hall-da-fama" class="text-white hover:text-yellow-300 transition">Hall da Fama</a>
+        <a href="#ecosystem" class="text-white hover:text-yellow-300 transition">Ecossistema</a>
         <a href="#manifesto" class="text-white hover:text-yellow-300 transition">Manifesto</a>
-        <a href="#linha-do-tempo" class="text-white hover:text-yellow-300 transition">Linha do Tempo</a>
+        <a href="#hall" class="text-white hover:text-yellow-300 transition">Hall da Fama</a>
+        <a href="#about" class="text-white hover:text-yellow-300 transition">Sobre</a>
+        <a href="#timeline" class="text-white hover:text-yellow-300 transition">Linha do Tempo</a>
         <a href="#kids" class="text-white hover:text-yellow-300 transition">Kids</a>
-        <a href="#noticias" class="text-white hover:text-yellow-300 transition">Noticiário</a>
-        <a href="#contato" class="btn-cta">Contato</a>
+        <a href="#news" class="text-white hover:text-yellow-300 transition">Noticiário</a>
+        <a href="#contact" class="btn-cta">Contato</a>
       </div>
     </div>
   </nav>
   <div class="h-20"></div> <!-- Spacer para navbar fixa -->
 
-  <!-- HOME / HERO -->
-  <section id="home" class="main-gradient py-20 px-2 md:px-0 flex flex-col items-center justify-center">
-    <div class="max-w-3xl mx-auto glass rounded-3xl p-8 md:p-12 text-center">
+  <!-- HERO -->
+  <section id="home" class="main-gradient py-24 px-2 md:px-0 flex flex-col items-center justify-center">
+    <div class="max-w-3xl mx-auto glass rounded-3xl p-10 md:p-14 text-center shadow-xl">
       <img src="https://cdn-icons-png.flaticon.com/512/1524/1524855.png" alt="Futuristic Human" class="mx-auto mb-5 h-20 w-20 icon-bg p-2 rounded-full shadow-md" />
-      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-3 tracking-tight drop-shadow-xl">Reconecte-se: O Ecossistema do Sentido Humano na IA</h1>
-      <p class="text-xl text-gray-700 mb-6">Tecnologia com propósito, impacto com história. Clique e descubra um legado de verdade, inovação e humanidade — do bug hunter global ao ecossistema Kids.</p>
-      <a href="#contato" class="btn-cta mt-4 inline-block shadow-lg">Fale Conosco</a>
+      <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4 tracking-tight drop-shadow-xl">Reconecte-se: O Ecossistema do Sentido Humano na IA</h1>
+      <p class="text-xl text-gray-700 mb-7">Tecnologia com propósito, impacto com história.<br>Cada clique revela um legado real — do bug hunter global ao ecossistema Kids.</p>
+      <a href="#contact" class="btn-cta mt-3 inline-block shadow-lg">Fale Conosco</a>
     </div>
   </section>
 
   <!-- ECOSSISTEMA -->
-  <section id="ecossistema" class="py-16 px-2 md:px-0 bg-white">
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
-      <div class="tech-card glass p-8 flex flex-col justify-center items-center text-center">
+  <section id="ecosystem" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 px-4">
+      <div class="tech-card glass p-10 flex flex-col items-center text-center">
         <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Network" class="h-16 w-16 icon-bg p-3 rounded-full mb-4 shadow" />
         <h2 class="section-title">Ecossistema Reconecte-se</h2>
-        <p class="section-desc">Tudo é conexão: tecnologia, propósito, pessoas e futuro. Cada área foi criada para proteger o sentido, inovar e impactar quem mais precisa.</p>
-        <ul class="list-disc text-left ml-4 space-y-1 text-gray-700">
-          <li><b>Espaço Físico:</b> Ambiente real de acolhimento e troca.</li>
-          <li><b>Automação Humanizada:</b> Tecnologia que liberta, não aprisiona.</li>
-          <li><b>Pasta Ouro/Prata/Bronze:</b> Governança de logs e resultados auditáveis.</li>
-          <li><b>APIs & Bots:</b> Sempre com propósito, limites éticos e foco no humano.</li>
+        <p class="section-desc">Tudo é conexão: tecnologia, propósito, pessoas e futuro.<br>Cada área foi criada para proteger o sentido, inovar e impactar quem mais precisa.</p>
+        <ul class="list-disc text-left ml-6 space-y-1 text-gray-700">
+          <li><b>Espaço Físico:</b> Acolhimento real, mentorias, criação coletiva.</li>
+          <li><b>Automação Humanizada:</b> Fluxos que devolvem tempo, dignidade e liberdade.</li>
+          <li><b>Pasta Ouro/Prata/Bronze:</b> Arquitetura de documentação, logs auditáveis, registros e marcos reais.</li>
+          <li><b>APIs & Bots:</b> Integrações digitais, propósito claro, ética, foco humano.</li>
         </ul>
       </div>
       <div class="flex flex-col justify-center items-center">
@@ -75,47 +78,46 @@
     </div>
   </section>
 
-  <!-- ASH -->
-  <section id="ash" class="py-16 px-2 md:px-0 bg-indigo-50">
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
-      <div class="flex flex-col justify-center items-center">
-        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="ASH Method" class="h-52 w-52 object-contain rounded-2xl shadow-lg"/>
-      </div>
-      <div class="tech-card glass p-8 flex flex-col justify-center items-center text-center">
-        <h2 class="section-title">ASH: Arquitetura do Sentido Humano</h2>
-        <p class="section-desc">A metodologia auditável que garante que a tecnologia respeite e amplifique o propósito humano. Da consultoria à automação, do diagnóstico à formação de equipes — tudo com lastro e registro público.</p>
-        <ul class="list-disc text-left ml-4 space-y-1 text-gray-700">
-          <li><b>2018:</b> Experimentação prática de IA aplicada.</li>
-          <li><b>2020:</b> Publicação e reconhecimento nacional.</li>
-          <li><b>2023:</b> Validação e auditabilidade internacional.</li>
-          <li><b>2024-26:</b> Expansão, Kids, bug bounty, certificação global.</li>
-        </ul>
+  <!-- MANIFESTO -->
+  <section id="manifesto" class="py-20 bg-indigo-50 relative">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="glass tech-card p-10 text-center shadow-lg relative z-10">
+        <img src="https://cdn-icons-png.flaticon.com/512/3159/3159066.png" class="h-14 w-14 icon-bg p-2 rounded-full mb-4 mx-auto" alt="Manifesto">
+        <h2 class="section-title">Manifesto Reconecte-se</h2>
+        <div class="section-desc text-justify mx-auto">
+          <b>Sala e Espaço Físico:</b> Ecossistema de acolhimento, inovação e verdade.<br>
+          <b>Automação Humanizada:</b> Liberdade e protagonismo, menos burocracia.<br>
+          <b>Propósito:</b> Devolver sentido e criar oportunidades pra quem foi ignorado pelo sistema.<br>
+          <b>Reconhecimentos:</b> Medalha Horse, Bug Hunter, Beta Feedverso, 10.000+ horas OpenAI.<br>
+          <b>Linha do Tempo:</b> 2018-2026, cada marco registrado.<br>
+          <b>Kids:</b> Proteção e criatividade na infância digital.<br>
+          <b>Noticiário:</b> Hub de tendências tech e legado.<br>
+          <b>Contato:</b> Espaço aberto para crescer junto, sem ego, só propósito.
+        </div>
       </div>
     </div>
   </section>
 
   <!-- HALL DA FAMA -->
-  <section id="hall-da-fama" class="py-16 px-2 md:px-0 bg-white">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
-      <div class="tech-card glass p-8 flex flex-col gap-6 justify-center items-center">
-        <div class="flex items-center gap-3">
-          <img src="https://cdn-icons-png.flaticon.com/512/3772/3772177.png" class="h-14 w-14 icon-bg p-2 rounded-full" alt="Trophy">
-          <h2 class="section-title !mb-0">Hall da Fama & Astros</h2>
-        </div>
+  <section id="hall" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-4">
+      <div class="tech-card glass p-10 flex flex-col gap-7 items-center text-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/3772/3772177.png" class="h-14 w-14 icon-bg p-2 rounded-full mb-2" alt="Trophy">
+        <h2 class="section-title">Hall da Fama & Astros</h2>
         <div class="bg-yellow-50 rounded-xl p-4 w-full shadow">
-          <b>🐎 Medalha Horse (2026):</b><br>
-          Reconhecimento global máximo, único detentor até agora. Protagonismo e ética no fechamento de ciclo internacional.
+          <b>🐎 Medalha Horse (2026):</b>  
+          Reconhecimento máximo global, único detentor até agora. Protagonismo, ética e fechamento de ciclo internacional.
         </div>
         <div class="bg-blue-50 rounded-xl p-4 w-full shadow">
-          <b>🐞 Bug Hunter:</b><br>
-          Quase 4.000 relatórios auditados. Primeiro e último relatório relevante do ciclo. Debate internacional sobre ética, bugs e IA.
+          <b>🐞 Bug Hunter:</b>  
+          Quase 4.000 relatórios auditados. Debate global sobre ética, alucinação, premiação em IA.
         </div>
         <div class="bg-indigo-50 rounded-xl p-4 w-full shadow">
-          <b>🚀 Beta Feedverso:</b><br>
+          <b>🚀 Beta Feedverso:</b>  
           Ecossistema digital top 5 global, referência em integração e governança.
         </div>
         <div class="bg-green-50 rounded-xl p-4 w-full shadow">
-          <b>📑 Relatórios & Rankings:</b><br>
+          <b>📑 Relatórios & Rankings:</b>  
           10.000+ horas de OpenAI, logs públicos, auditabilidade e benchmark global.
         </div>
       </div>
@@ -125,27 +127,31 @@
     </div>
   </section>
 
-  <!-- MANIFESTO -->
-  <section id="manifesto" class="py-16 px-2 md:px-0 bg-indigo-50">
-    <div class="max-w-4xl mx-auto tech-card glass p-10 flex flex-col justify-center items-center">
-      <img src="https://cdn-icons-png.flaticon.com/512/3159/3159066.png" class="h-14 w-14 icon-bg p-2 rounded-full mb-4" alt="Manifesto">
-      <h2 class="section-title">Manifesto Reconecte-se</h2>
-      <div class="section-desc text-justify">
-        <b>Sala e Espaço Físico:</b> Ecossistema de acolhimento, inovação e verdade.<br>
-        <b>Automação Humanizada:</b> Liberdade e protagonismo, menos burocracia.<br>
-        <b>Propósito:</b> Devolver sentido e criar oportunidades pra quem foi ignorado pelo sistema.<br>
-        <b>Reconhecimentos:</b> Medalha Horse, Bug Hunter, Beta Feedverso, 10.000+ horas OpenAI.<br>
-        <b>Linha do Tempo:</b> 2018-2026, cada marco registrado.<br>
-        <b>Kids:</b> Proteção e criatividade na infância digital.<br>
-        <b>Noticiário:</b> Hub de tendências tech e legado.<br>
-        <b>Contato:</b> Espaço aberto para crescer junto, sem ego, só propósito.
+  <!-- SOBRE/BIO -->
+  <section id="about" class="py-20 bg-indigo-50">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 px-4">
+      <div class="md:w-1/2">
+        <div class="aspect-square rounded-2xl bg-slate-100 relative overflow-hidden flex items-center justify-center text-slate-300">
+          <span class="text-lg">Foto do Idealizador</span>
+        </div>
+      </div>
+      <div class="md:w-1/2">
+        <h2 class="section-title">A Mente por trás da Fundação</h2>
+        <p class="text-lg text-slate-700 mb-6 leading-relaxed">
+          Tudo começou com uma inquietação: a tecnologia avançava, mas o sentido humano recuava.<br>
+          A Reconecte-se não nasceu em uma sala de reuniões, mas na trincheira da vida real, buscando respostas autênticas para dilemas digitais.
+        </p>
+        <p class="text-slate-600 mb-8">
+          A missão é clara: criar um legado onde a inovação serve à vida, e não o contrário.
+        </p>
+        <a href="#contact" class="text-teal-600 font-semibold hover:text-teal-700 flex items-center gap-2">Conheça o Time Completo →</a>
       </div>
     </div>
   </section>
 
   <!-- LINHA DO TEMPO -->
-  <section id="linha-do-tempo" class="py-16 px-2 md:px-0 bg-white">
-    <div class="max-w-4xl mx-auto">
+  <section id="timeline" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
       <h2 class="section-title text-center mb-8">Linha do Tempo</h2>
       <div class="relative flex flex-col items-center">
         <div class="absolute left-1/2 -translate-x-1/2 top-8 bottom-8 timeline-bar z-0"></div>
@@ -189,7 +195,7 @@
   </section>
 
   <!-- KIDS -->
-  <section id="kids" class="py-16 px-2 md:px-0 bg-indigo-50">
+  <section id="kids" class="py-20 bg-indigo-50">
     <div class="max-w-4xl mx-auto tech-card glass p-10 flex flex-col justify-center items-center">
       <img src="https://cdn-icons-png.flaticon.com/512/3159/3159080.png" class="h-14 w-14 icon-bg p-2 rounded-full mb-4" alt="Kids">
       <h2 class="section-title">Reconecte-se Kids</h2>
@@ -207,7 +213,7 @@
   </section>
 
   <!-- NOTICIÁRIO -->
-  <section id="noticias" class="py-16 px-2 md:px-0 bg-white">
+  <section id="news" class="py-20 bg-white">
     <div class="max-w-4xl mx-auto tech-card glass p-10 flex flex-col justify-center items-center">
       <img src="https://cdn-icons-png.flaticon.com/512/4022/4022092.png" class="h-14 w-14 icon-bg p-2 rounded-full mb-4" alt="Notícias">
       <h2 class="section-title">Noticiário & Curiosidades Tech</h2>
@@ -222,7 +228,7 @@
   </section>
 
   <!-- CONTATO -->
-  <section id="contato" class="py-16 px-2 md:px-0 bg-indigo-50">
+  <section id="contact" class="py-20 bg-indigo-50">
     <div class="max-w-xl mx-auto tech-card glass p-10 flex flex-col justify-center items-center">
       <img src="https://cdn-icons-png.flaticon.com/512/3523/3523063.png" class="h-14 w-14 icon-bg p-2 rounded-full mb-4" alt="Contato">
       <h2 class="section-title">Contato</h2>
@@ -233,5 +239,4 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="py-8 bg-indigo-900 text-white text-center text-sm mt-10 rounded-t-2xl shadow-xl">
-    <span>&copy; 2026 Reconecte-se. Criado com amor, verdade e lastro. | Visual
+  <footer class="py-8 bg-slate-900 text-white text-center text-sm mt
