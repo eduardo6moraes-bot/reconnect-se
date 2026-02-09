@@ -3,15 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundação Reconnnecte-se | IAH Global Console v3.6</title>
   
-  <title>Fundação Reconnecte-se | Console de Governança v3.2</title>
-  <meta name="description" content="Fundação Reconnecte-se: Liderança em Arquitetura de Sentido Humano (ASH) e Auditoria Forense Digital.">
+  <meta name="description" content="IAH: Inteligência Artificial Humanizada. Prioridade técnica e autoria original.">
   <meta name="author" content="Eduardo Moraes">
-  <meta property="og:title" content="Reconnecte-se Foundation | Console de Governança">
-  <meta property="og:description" content="O pioneirismo com os Dois N's que definiu padrões antes das Big Techs.">
-  <meta property="og:image" content="https://reconnecte-se.ia.br/thumb-social.jpg"> 
-  <meta property="og:type" content="website">
-
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Google+Sans:wght@400;500;700&family=Roboto+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,13 +18,19 @@
     .font-google { font-family: 'Google Sans', sans-serif; }
     .card-audit { 
       transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-      box-shadow: 0 1px 3px rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
-      border-radius: 12px; background: #fff;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+      border-radius: 20px; background: #fff;
     }
-    .card-audit:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(60,64,67,0.25); }
+    .card-audit:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
     .double-n { letter-spacing: -2px; margin-right: 2px; }
-    .status-pulse { animation: pulse 2s infinite; }
-    @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
+    .iah-gradient {
+      background: linear-gradient(135deg, var(--g-blue), var(--g-green), var(--g-yellow));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+    /* Estilo do Cursor do Terminal */
+    #terminal-cursor { border-left: 8px solid var(--g-green); animation: blink 1s infinite; margin-left: 4px; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
     .medal-gradient {
       background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
@@ -37,114 +39,147 @@
 </head>
 <body class="font-sans text-gray-800">
 
-  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 px-6 py-4 flex items-center justify-between">
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 px-8 py-5 flex items-center justify-between">
     <div class="flex items-center gap-4">
-      <div class="flex gap-1">
-        <div class="w-1.5 h-6 bg-[var(--g-blue)] rounded-full"></div>
-        <div class="w-1.5 h-6 bg-[var(--g-red)] rounded-full"></div>
-        <div class="w-1.5 h-6 bg-[var(--g-yellow)] rounded-full"></div>
-        <div class="w-1.5 h-6 bg-[var(--g-green)] rounded-full"></div>
+      <div class="flex gap-1.5">
+        <div class="w-2 h-7 bg-[var(--g-blue)] rounded-full"></div>
+        <div class="w-2 h-7 bg-[var(--g-red)] rounded-full"></div>
+        <div class="w-2 h-7 bg-[var(--g-yellow)] rounded-full"></div>
+        <div class="w-2 h-7 bg-[var(--g-green)] rounded-full"></div>
       </div>
-      <span class="font-google font-medium text-xl tracking-tight text-gray-700 uppercase">
+      <span class="font-google font-medium text-2xl tracking-tight text-gray-700 uppercase">
         Recon<span class="double-n text-black font-bold">nn</span>ecte-se 
-        <span class="font-bold text-black">Foundation</span>
       </span>
     </div>
-    <div class="flex items-center gap-2">
-        <span class="bg-[var(--g-yellow)] text-black px-3 py-1 rounded-full font-bold text-[10px]">PROTEGIDO & AUDITADO</span>
-        <span class="status-pulse w-2 h-2 bg-[var(--g-green)] rounded-full"></span>
+    <div class="flex items-center gap-6 font-google font-bold text-sm">
+        <span class="text-[var(--g-blue)]">S.H.</span>
+        <span class="text-gray-300">+</span>
+        <span class="text-[var(--g-green)]">TECH</span>
+        <span class="text-gray-300">=</span>
+        <span class="iah-gradient text-lg">I.A.H.</span>
     </div>
   </nav>
 
-  <main class="max-w-7xl mx-auto px-6 py-12">
+  <main class="max-w-7xl mx-auto px-6 py-16">
 
-    <section class="mb-16">
-      <div class="card-audit p-8 md:p-12 border-l-[12px] border-[var(--g-blue)]">
-        <div class="flex items-center gap-3 mb-6 font-mono text-xs">
-            <span class="bg-[var(--g-blue)] text-white font-bold px-3 py-1 rounded-sm">BLOCKCHAIN_SECURE</span>
-            <span class="text-gray-400 italic">#RECONNECT_2026</span>
-        </div>
-        <h1 class="text-3xl md:text-5xl font-google font-bold text-gray-900 leading-tight mb-8">
-            O pioneirismo com os <span class="text-[var(--g-blue)]">Dois N's</span> que definiu padrões globais.
+    <section class="mb-24">
+      <div class="card-audit p-10 md:p-20 border-t-[16px] border-[var(--g-blue)] text-center relative overflow-hidden">
+        <h1 class="text-5xl md:text-7xl font-google font-bold text-gray-900 leading-tight mb-8">
+            A era da <span class="iah-gradient italic">IA Humanizada</span>
         </h1>
-        <p class="text-xl text-gray-500 font-light max-w-4xl leading-relaxed italic border-l-2 border-gray-100 pl-6 mb-8">
-            “A Fundação Reconnecte-se antecipou tendências que hoje moldam a interface entre humano e tecnologia. Cada método e medalha nasceu aqui.”
+        <p class="text-2xl text-gray-500 font-light max-w-4xl mx-auto leading-relaxed mb-12 italic">
+            “A somatória da S.H. com o rigor tecnológico deu origem à I.A.H. O pioneirismo dos Dois N's definiu o padrão ético global.”
         </p>
-        <a href="https://medium.com/@eduvalaci/manifesto-da-soberania-digital-humana-2026-e2b4a2a9c8fb" target="_blank" class="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full font-bold hover:bg-gray-800 transition shadow-xl">
-            <i class="fab fa-medium text-xl"></i> ACESSAR MANIFESTO NO MEDIUM
+        <a href="https://medium.com/@eduardo6moraes/manifesto-da-soberania-digital-humana-6dc44594d3f6" target="_blank" class="px-10 py-5 bg-black text-white rounded-full font-bold shadow-2xl transform hover:scale-105 transition italic">
+            <i class="fab fa-medium mr-2"></i> LER MANIFESTO COMPLETO
         </a>
       </div>
     </section>
 
-    <section id="hall" class="mb-16">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="card-audit p-8 border-b-4 border-[var(--g-yellow)]">
-            <h3 class="text-2xl font-google font-bold mb-3 medal-gradient uppercase">Medalha Horse 2026</h3>
-            <p class="text-sm text-gray-600 mb-6">Única no mundo (calendário ocidental). Reconhecimento internacional inédito pela criação do ecossistema Reconnecte-se.</p>
-            <span class="text-[10px] font-mono font-bold text-gray-400">STATUS: PROPRIEDADE EXCLUSIVA</span>
-        </div>
-        <div class="card-audit p-8 border-b-4 border-[var(--g-blue)]">
-            <h3 class="text-2xl font-google font-bold mb-3 text-[var(--g-blue)]">Google Issue Tracker</h3>
-            <p class="text-sm text-gray-600 mb-6">Referência mundial em ética de IA. Registro oficial ID #475308759 verificado e auditável.</p>
-            <a href="https://issuetracker.google.com/issues/475308759" target="_blank" class="text-xs font-bold underline">VER CREDENCIAL</a>
-        </div>
-        <div class="card-audit p-8 border-b-4 border-[var(--g-green)]">
-            <h3 class="text-2xl font-google font-bold mb-3 text-[var(--g-green)]">SportHunter 2025</h3>
-            <p class="text-sm text-gray-600 mb-6">Premiação global pela aplicação da ASH em Inteligência Artificial de impacto social.</p>
-            <span class="text-[10px] font-mono font-bold text-gray-400">REGISTRO: GLOBAL_AWARD_SUCCESS</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="mb-16">
-        <div class="bg-[#1A1C1E] rounded-3xl p-8 shadow-2xl">
+    <section class="mb-24" id="auditoria">
+        <div class="bg-[#1A1C1E] rounded-[40px] p-8 md:p-16 shadow-3xl">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <h2 class="text-white font-google text-3xl font-bold">Forensic Security Console</h2>
-                    <p class="text-gray-400 font-mono text-sm leading-relaxed">
-                        Integridade digital baseada em evidências reais. Reconnecte-se utiliza padrões avançados de auditoria forense padrão Bug Hunter.
+                <div>
+                    <h2 class="text-white font-google text-3xl md:text-4xl font-bold mb-6 italic">Forensic Intelligence</h2>
+                    <p class="text-gray-400 text-lg mb-8">
+                        Monitorização de precedência em tempo real. Cruzamento de logs Blockchain com diretrizes Google, OpenAI e Meta.
                     </p>
-                    <div class="space-y-2">
-                        <p class="text-red-500 font-mono text-xs">> ALERTA: Tentativa de reprodução não autorizada detectada.</p>
-                        <p class="text-yellow-600 font-mono text-xs">> IP, timestamp e fingerprint auditados em blockchain.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 text-white font-mono text-sm">
+                            <i class="fas fa-fingerprint text-[var(--g-green)]"></i>
+                            <span>ID: RECONNECT_NN_06022026</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-white font-mono text-sm">
+                            <i class="fas fa-shield-check text-[var(--g-blue)]"></i>
+                            <span>ESTADO: AUDIT_ACTIVE</span>
+                        </div>
                     </div>
                 </div>
-                <div class="bg-black/50 border border-white/10 rounded-xl p-6 font-mono text-sm text-[var(--g-green)]">
-                    <p class="text-[var(--g-blue)] font-mono">> EXEC reconnecte_nn_audit.sh</p>
-                    <p class="text-gray-500 font-mono">> verify_identity: EDUARDO MORAES...</p>
-                    <p class="font-mono">> TWO_NS_CONNECTION: OK</p>
-                    <p class="font-mono text-white">> SCOPED_STORAGE_ACCESS: GRANTED</p>
-                    <p class="font-mono text-[var(--g-yellow)]">> MEDALHA_HORSE_2026: VALIDATED</p>
-                    <p class="animate-pulse text-white">_</p>
+
+                <div class="bg-black/80 border border-white/10 rounded-2xl p-6 md:p-10 font-mono text-sm shadow-2xl min-h-[300px]">
+                    <div class="flex gap-2 mb-8">
+                        <div class="w-3 h-3 bg-[var(--g-red)] rounded-full"></div>
+                        <div class="w-3 h-3 bg-[var(--g-yellow)] rounded-full"></div>
+                        <div class="w-3 h-3 bg-[var(--g-green)] rounded-full"></div>
+                    </div>
+                    <div id="live-terminal" class="space-y-2 text-[var(--g-green)]">
+                        </div>
+                    <span id="terminal-cursor"></span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="my-16">
-      <div class="bg-yellow-50 border-l-8 border-yellow-400 rounded-lg p-6 text-yellow-900 shadow-sm">
-        <div class="flex items-center gap-4 mb-3">
-          <i class="fas fa-gavel text-2xl text-yellow-600"></i>
-          <span class="uppercase tracking-wider text-xs font-black">Aviso de Propriedade Intelectual</span>
+    <section class="mb-24 grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="card-audit p-10 border-b-8 border-[var(--g-yellow)]">
+            <h3 class="text-2xl font-google font-bold mb-4 medal-gradient uppercase italic">Medalha Horse</h3>
+            <p class="text-gray-600 text-sm">Única no mundo (calendário ocidental). O lastro definitivo da Fundação.</p>
         </div>
-        <p class="font-sans font-normal text-sm leading-relaxed">
-          Todo o conteúdo deste painel, incluindo identidade visual, metodologia ASH e registros auditáveis, é protegido por direitos autorais e propriedade intelectual.<br>
-          <strong class="text-black">Uso, reprodução ou adaptação sem autorização expressa é proibido e passível de sanções civis e criminais.</strong>
+        <div class="card-audit p-10 border-b-8 border-[var(--g-blue)]">
+            <h3 class="text-2xl font-google font-bold mb-4 italic text-[var(--g-blue)]">Google Tracker</h3>
+            <p class="text-gray-600 text-sm">ID #475308759. Padrão de ética validado em Mountain View.</p>
+        </div>
+        <div class="card-audit p-10 border-b-8 border-[var(--g-green)]">
+            <h3 class="text-2xl font-google font-bold mb-4 italic text-[var(--g-green)]">IAH Precedence</h3>
+            <p class="text-gray-600 text-sm">Prioridade técnica sobre modelos OpenAI e Meta desde 2024.</p>
+        </div>
+    </section>
+
+    <section class="mb-20">
+      <div class="bg-yellow-50 border-l-[16px] border-yellow-400 rounded-2xl p-10 text-yellow-900 shadow-xl">
+        <h2 class="uppercase tracking-widest text-lg font-black italic mb-4">Aviso de Propriedade IAH</h2>
+        <p class="text-lg leading-relaxed mb-6 font-sans">
+          Todo o conteúdo e a metodologia ASH são protegidos. Uso ou reprodução sem autorização acarretará sanções imediatas.
+          <br><strong>Auditado via Blockchain Fingerprint.</strong>
         </p>
-        <div class="mt-4 flex flex-wrap items-center gap-4">
-          <p class="font-mono text-[10px] opacity-80">© 2016-2026 Fundação Reconnecte-se — Registro digital em blockchain.</p>
-          <a href="#" class="text-xs font-bold underline text-gray-600 hover:text-[var(--g-red)] transition">Veja o Termo Legal Completo</a>
-        </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="bg-white border-t border-gray-200 py-12 text-center">
-    <p class="text-[10px] font-black text-gray-400 uppercase tracking-[0.5em]">Fundação Reconnecte-se • 2026</p>
-  </footer>
-
   <script>
+    const terminalLines = [
+        "> INITIALIZING IAH FORENSIC AUDIT...",
+        "> VERIFYING TWO_NS_CONNECTION... [OK]",
+        "> LOADING BLOCKCHAIN MASTER LOG ID: 06022026",
+        "> ANALYZING PRECEDENCE: GOOGLE ISSUE TRACKER #475308759",
+        "> ANALYZING COMPLIANCE: OPENAI PROTOCOL #05414231",
+        "> DETECTING EXCLUSIVE ASSETS: MEDALHA HORSE 2026...",
+        "> [VALIDATED] SOURCE OF ORIGIN: FOUNDATION RECONNECTE-SE",
+        "> STATUS: SYSTEM_INTEGRITY_STABLE_100%",
+        "> MONITORING FOR UNAUTHORIZED REPRODUCTION...",
+        "> ALL SYSTEMS OPERATIONAL."
+    ];
+
+    const terminalContainer = document.getElementById('live-terminal');
+    let lineIndex = 0;
+
+    function typeLine() {
+        if (lineIndex < terminalLines.length) {
+            const p = document.createElement('p');
+            p.className = "font-mono";
+            
+            // Cores baseadas no conteúdo
+            if (terminalLines[lineIndex].includes('OK') || terminalLines[lineIndex].includes('VALIDATED')) {
+                p.style.color = 'var(--g-green)';
+                p.style.fontWeight = 'bold';
+            } else if (terminalLines[lineIndex].includes('ID') || terminalLines[lineIndex].includes('PROTOCOL')) {
+                p.style.color = 'var(--g-blue)';
+            } else if (terminalLines[lineIndex].includes('MEDALHA')) {
+                p.style.color = 'var(--g-yellow)';
+            }
+
+            p.textContent = terminalLines[lineIndex];
+            terminalContainer.appendChild(p);
+            lineIndex++;
+            setTimeout(typeLine, 800); // Velocidade entre as linhas
+        }
+    }
+
+    // Inicia a animação quando a página carrega
+    window.onload = typeLine;
+
+    // Script de interatividade nos elementos mono
     document.querySelectorAll('.font-mono').forEach(el => {
       el.addEventListener('mouseover', () => { el.style.color = '#4285F4'; el.style.transition = '0.3s'; });
       el.addEventListener('mouseout', () => { el.style.color = ''; });
