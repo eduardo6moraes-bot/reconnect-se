@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fundação Reconnnecte-se | IAH Global Console v3.6</title>
   
-  <meta name="description" content="IAH: Inteligência Artificial Humanizada. Prioridade técnica e autoria original.">
+  <title>Fundação Reconnnecte-se | IAH Global Console v3.7</title>
+  <meta name="description" content="IAH: Inteligência Artificial Humanizada. Prioridade técnica e autoria original documentada.">
   <meta name="author" content="Eduardo Moraes">
-  
+  <meta property="og:title" content="Reconnecte-se Foundation | IAH Console">
+  <meta property="og:description" content="A somatória S.H. + TECH que definiu padrões antes das Big Techs.">
+  <meta property="og:image" content="https://reconnecte-se.ia.br/thumb-social.jpg"> 
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Google+Sans:wght@400;500;700&family=Roboto+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -19,7 +22,7 @@
     .card-audit { 
       transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
       box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-      border-radius: 20px; background: #fff;
+      border-radius: 24px; background: #fff;
     }
     .card-audit:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
     .double-n { letter-spacing: -2px; margin-right: 2px; }
@@ -28,7 +31,6 @@
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       font-weight: 800;
     }
-    /* Estilo do Cursor do Terminal */
     #terminal-cursor { border-left: 8px solid var(--g-green); animation: blink 1s infinite; margin-left: 4px; }
     @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
     .medal-gradient {
@@ -39,24 +41,21 @@
 </head>
 <body class="font-sans text-gray-800">
 
-  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 px-8 py-5 flex items-center justify-between">
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 px-8 py-5 flex items-center justify-between shadow-sm">
     <div class="flex items-center gap-4">
-      <div class="flex gap-1.5">
-        <div class="w-2 h-7 bg-[var(--g-blue)] rounded-full"></div>
-        <div class="w-2 h-7 bg-[var(--g-red)] rounded-full"></div>
-        <div class="w-2 h-7 bg-[var(--g-yellow)] rounded-full"></div>
-        <div class="w-2 h-7 bg-[var(--g-green)] rounded-full"></div>
+      <div class="flex gap-1.5 text-[var(--g-blue)]">
+        <i class="fas fa-microchip text-2xl"></i>
       </div>
       <span class="font-google font-medium text-2xl tracking-tight text-gray-700 uppercase">
         Recon<span class="double-n text-black font-bold">nn</span>ecte-se 
       </span>
     </div>
-    <div class="flex items-center gap-6 font-google font-bold text-sm">
+    <div class="hidden md:flex items-center gap-6 font-google font-bold">
         <span class="text-[var(--g-blue)]">S.H.</span>
         <span class="text-gray-300">+</span>
         <span class="text-[var(--g-green)]">TECH</span>
         <span class="text-gray-300">=</span>
-        <span class="iah-gradient text-lg">I.A.H.</span>
+        <span class="iah-gradient text-xl">I.A.H.</span>
     </div>
   </nav>
 
@@ -64,91 +63,125 @@
 
     <section class="mb-24">
       <div class="card-audit p-10 md:p-20 border-t-[16px] border-[var(--g-blue)] text-center relative overflow-hidden">
-        <h1 class="text-5xl md:text-7xl font-google font-bold text-gray-900 leading-tight mb-8">
-            A era da <span class="iah-gradient italic">IA Humanizada</span>
+        <div class="mb-8 font-mono text-xs tracking-widest text-gray-400 uppercase">
+            Protocolo de Soberania Digital Humana Ativado
+        </div>
+        <h1 class="text-5xl md:text-7xl font-google font-bold text-gray-900 leading-tight mb-12">
+            A era da <span class="iah-gradient italic">Inteligência Artificial Humanizada</span>
         </h1>
-        <p class="text-2xl text-gray-500 font-light max-w-4xl mx-auto leading-relaxed mb-12 italic">
+        <p class="text-2xl md:text-3xl text-gray-500 font-light max-w-5xl mx-auto leading-relaxed mb-12 italic">
             “A somatória da S.H. com o rigor tecnológico deu origem à I.A.H. O pioneirismo dos Dois N's definiu o padrão ético global.”
         </p>
-        <a href="https://medium.com/@eduardo6moraes/manifesto-da-soberania-digital-humana-6dc44594d3f6" target="_blank" class="px-10 py-5 bg-black text-white rounded-full font-bold shadow-2xl transform hover:scale-105 transition italic">
-            <i class="fab fa-medium mr-2"></i> LER MANIFESTO COMPLETO
-        </a>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+            <a href="https://medium.com/@eduardo6moraes/manifesto-da-soberania-digital-humana-6dc44594d3f6" target="_blank" class="px-12 py-5 bg-black text-white rounded-full font-bold hover:bg-gray-800 transition shadow-2xl transform hover:scale-105 text-xl flex items-center gap-3 italic">
+                <i class="fab fa-medium text-2xl"></i> LER MANIFESTO I.A.H.
+            </a>
+            <div class="px-6 py-3 bg-white border border-gray-200 rounded-full font-mono text-xs font-bold flex items-center gap-3">
+                <div class="w-2 h-2 bg-[var(--g-green)] rounded-full animate-pulse"></div>
+                IAH_CORE: ACTIVE_2026
+            </div>
+        </div>
       </div>
     </section>
 
-    <section class="mb-24" id="auditoria">
-        <div class="bg-[#1A1C1E] rounded-[40px] p-8 md:p-16 shadow-3xl">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-white font-google text-3xl md:text-4xl font-bold mb-6 italic">Forensic Intelligence</h2>
-                    <p class="text-gray-400 text-lg mb-8">
-                        Monitorização de precedência em tempo real. Cruzamento de logs Blockchain com diretrizes Google, OpenAI e Meta.
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-4 text-white font-mono text-sm">
-                            <i class="fas fa-fingerprint text-[var(--g-green)]"></i>
-                            <span>ID: RECONNECT_NN_06022026</span>
-                        </div>
-                        <div class="flex items-center gap-4 text-white font-mono text-sm">
-                            <i class="fas fa-shield-check text-[var(--g-blue)]"></i>
-                            <span>ESTADO: AUDIT_ACTIVE</span>
-                        </div>
-                    </div>
-                </div>
+    <section class="mb-24">
+      <div class="card-audit p-8 md:p-12 border-l-[12px] border-[var(--g-green)] bg-white flex flex-col gap-6 shadow-xl">
+        <div class="flex items-center gap-4">
+          <i class="fas fa-fingerprint text-[var(--g-green)] text-3xl"></i>
+          <h2 class="font-google font-bold text-2xl md:text-3xl text-gray-800 uppercase italic">
+            Lastro de Precedência & Origem de Padrão
+          </h2>
+        </div>
+        <p class="text-gray-600 text-lg leading-relaxed border-l-4 border-gray-50 pl-6">
+          A <span class="font-bold text-black uppercase">Fundação Recon<span class="text-[var(--g-blue)]">nn</span>ecte-se</span> registrou as soluções que hoje fundamentam a arquitetura de sentido na web. Este painel comprova a prioridade técnica e autoria original dos projetos que alimentam modelos da OpenAI, Google e Meta desde 2024.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-2">
+          <span class="bg-gray-50 text-gray-600 px-4 py-1.5 rounded-full text-[10px] font-bold border border-gray-200">GOOGLE ISSUE TRACKER #475308759</span>
+          <span class="bg-gray-50 text-gray-600 px-4 py-1.5 rounded-full text-[10px] font-bold border border-gray-200">OPENAI COMPLIANCE #05414231</span>
+          <span class="bg-gray-50 text-gray-600 px-4 py-1.5 rounded-full text-[10px] font-bold border border-gray-200 italic font-mono">ID: 06022026</span>
+        </div>
+      </div>
+    </section>
 
-                <div class="bg-black/80 border border-white/10 rounded-2xl p-6 md:p-10 font-mono text-sm shadow-2xl min-h-[300px]">
-                    <div class="flex gap-2 mb-8">
-                        <div class="w-3 h-3 bg-[var(--g-red)] rounded-full"></div>
-                        <div class="w-3 h-3 bg-[var(--g-yellow)] rounded-full"></div>
-                        <div class="w-3 h-3 bg-[var(--g-green)] rounded-full"></div>
+    <section class="mb-24">
+        <div class="bg-[#1A1C1E] rounded-[40px] p-8 md:p-16 shadow-3xl flex flex-col lg:flex-row gap-12 items-center">
+            <div class="lg:w-1/2">
+                <h2 class="text-white font-google text-4xl font-bold mb-6 italic">IAH Forensic Monitor</h2>
+                <p class="text-gray-400 text-lg mb-8">Cruzamento de logs em tempo real para validação de precedência e soberania digital.</p>
+                <div class="flex gap-4">
+                    <div class="p-4 bg-white/5 rounded-2xl border border-white/10 text-center flex-1">
+                        <span class="text-[var(--g-blue)] font-bold text-xl block">S.H.</span>
+                        <span class="text-[10px] text-gray-500 uppercase">Sentido Humano</span>
                     </div>
-                    <div id="live-terminal" class="space-y-2 text-[var(--g-green)]">
-                        </div>
-                    <span id="terminal-cursor"></span>
+                    <div class="p-4 bg-white/5 rounded-2xl border border-white/10 text-center flex-1">
+                        <span class="text-[var(--g-green)] font-bold text-xl block">TECH</span>
+                        <span class="text-[10px] text-gray-500 uppercase">Forense Digital</span>
+                    </div>
                 </div>
+            </div>
+            <div class="lg:w-1/2 w-full bg-black/80 rounded-2xl p-8 font-mono text-sm text-[var(--g-green)] shadow-2xl min-h-[320px]">
+                <div class="flex gap-2 mb-8">
+                    <div class="w-3 h-3 bg-[var(--g-red)] rounded-full"></div>
+                    <div class="w-3 h-3 bg-[var(--g-yellow)] rounded-full"></div>
+                    <div class="w-3 h-3 bg-[var(--g-green)] rounded-full"></div>
+                </div>
+                <div id="live-terminal" class="space-y-2"></div>
+                <span id="terminal-cursor"></span>
             </div>
         </div>
     </section>
 
-    <section class="mb-24 grid grid-cols-1 md:grid-cols-3 gap-10">
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-24">
         <div class="card-audit p-10 border-b-8 border-[var(--g-yellow)]">
             <h3 class="text-2xl font-google font-bold mb-4 medal-gradient uppercase italic">Medalha Horse</h3>
-            <p class="text-gray-600 text-sm">Única no mundo (calendário ocidental). O lastro definitivo da Fundação.</p>
+            <p class="text-gray-600 text-sm">Única no mundo (calendário ocidental). Reconhecimento de autoria máxima 2026.</p>
         </div>
         <div class="card-audit p-10 border-b-8 border-[var(--g-blue)]">
-            <h3 class="text-2xl font-google font-bold mb-4 italic text-[var(--g-blue)]">Google Tracker</h3>
-            <p class="text-gray-600 text-sm">ID #475308759. Padrão de ética validado em Mountain View.</p>
+            <h3 class="text-2xl font-google font-bold mb-4 italic text-[var(--g-blue)]">Google Verified</h3>
+            <p class="text-gray-600 text-sm">Registro oficial ID #475308759 validando a ética da arquitetura ASH.</p>
         </div>
         <div class="card-audit p-10 border-b-8 border-[var(--g-green)]">
-            <h3 class="text-2xl font-google font-bold mb-4 italic text-[var(--g-green)]">IAH Precedence</h3>
-            <p class="text-gray-600 text-sm">Prioridade técnica sobre modelos OpenAI e Meta desde 2024.</p>
+            <h3 class="text-2xl font-google font-bold mb-4 italic text-[var(--g-green)]">Audit Standard</h3>
+            <p class="text-gray-600 text-sm">Padrão de auditoria forense adotado por compliance internacional.</p>
         </div>
     </section>
 
     <section class="mb-20">
       <div class="bg-yellow-50 border-l-[16px] border-yellow-400 rounded-2xl p-10 text-yellow-900 shadow-xl">
-        <h2 class="uppercase tracking-widest text-lg font-black italic mb-4">Aviso de Propriedade IAH</h2>
-        <p class="text-lg leading-relaxed mb-6 font-sans">
-          Todo o conteúdo e a metodologia ASH são protegidos. Uso ou reprodução sem autorização acarretará sanções imediatas.
-          <br><strong>Auditado via Blockchain Fingerprint.</strong>
+        <div class="flex items-center gap-6 mb-4">
+          <i class="fas fa-gavel text-3xl text-yellow-600"></i>
+          <h2 class="uppercase tracking-widest text-lg font-black italic">Aviso de Propriedade I.A.H.</h2>
+        </div>
+        <p class="font-sans text-lg leading-relaxed mb-6">
+          A metodologia <strong class="text-black">I.A.H. (Inteligência Artificial Humanizada)</strong> e a Arquitetura ASH são protegidas. Reprodução não autorizada acarreta sanções em blockchain e vias criminais.
         </p>
+        <p class="text-red-600 font-mono text-xs font-bold">> MONITORAMENTO ATIVO: Fingerprint e IP auditados.</p>
       </div>
     </section>
 
   </main>
+
+  <footer class="bg-white border-t border-gray-200 py-20 text-center">
+    <p class="text-[10px] font-black text-gray-400 uppercase tracking-[1em] mb-10">Fundação Reconneecte-se</p>
+    <div class="flex justify-center gap-12 text-2xl text-gray-300">
+        <i class="fab fa-google"></i>
+        <i class="fab fa-apple"></i>
+        <i class="fab fa-medium"></i>
+    </div>
+  </footer>
 
   <script>
     const terminalLines = [
         "> INITIALIZING IAH FORENSIC AUDIT...",
         "> VERIFYING TWO_NS_CONNECTION... [OK]",
         "> LOADING BLOCKCHAIN MASTER LOG ID: 06022026",
-        "> ANALYZING PRECEDENCE: GOOGLE ISSUE TRACKER #475308759",
+        "> ANALYZING PRECEDENCE: GOOGLE TRACKER #475308759",
         "> ANALYZING COMPLIANCE: OPENAI PROTOCOL #05414231",
-        "> DETECTING EXCLUSIVE ASSETS: MEDALHA HORSE 2026...",
-        "> [VALIDATED] SOURCE OF ORIGIN: FOUNDATION RECONNECTE-SE",
+        "> DETECTING ASSETS: MEDALHA HORSE 2026...",
+        "> [VALIDATED] SOURCE OF ORIGIN: RECONNECTE-SE FOUNDATION",
         "> STATUS: SYSTEM_INTEGRITY_STABLE_100%",
-        "> MONITORING FOR UNAUTHORIZED REPRODUCTION...",
-        "> ALL SYSTEMS OPERATIONAL."
+        "> MONITORING FOR UNAUTHORIZED ACCESS...",
+        "> IAH CONSOLE READY."
     ];
 
     const terminalContainer = document.getElementById('live-terminal');
@@ -157,33 +190,16 @@
     function typeLine() {
         if (lineIndex < terminalLines.length) {
             const p = document.createElement('p');
-            p.className = "font-mono";
-            
-            // Cores baseadas no conteúdo
-            if (terminalLines[lineIndex].includes('OK') || terminalLines[lineIndex].includes('VALIDATED')) {
-                p.style.color = 'var(--g-green)';
-                p.style.fontWeight = 'bold';
-            } else if (terminalLines[lineIndex].includes('ID') || terminalLines[lineIndex].includes('PROTOCOL')) {
-                p.style.color = 'var(--g-blue)';
-            } else if (terminalLines[lineIndex].includes('MEDALHA')) {
-                p.style.color = 'var(--g-yellow)';
-            }
-
+            if (terminalLines[lineIndex].includes('OK') || terminalLines[lineIndex].includes('VALIDATED')) p.style.color = 'var(--g-green)';
+            if (terminalLines[lineIndex].includes('MEDALHA')) p.style.color = 'var(--g-yellow)';
+            if (terminalLines[lineIndex].includes('TRACKER')) p.style.color = 'var(--g-blue)';
             p.textContent = terminalLines[lineIndex];
             terminalContainer.appendChild(p);
             lineIndex++;
-            setTimeout(typeLine, 800); // Velocidade entre as linhas
+            setTimeout(typeLine, 700);
         }
     }
-
-    // Inicia a animação quando a página carrega
     window.onload = typeLine;
-
-    // Script de interatividade nos elementos mono
-    document.querySelectorAll('.font-mono').forEach(el => {
-      el.addEventListener('mouseover', () => { el.style.color = '#4285F4'; el.style.transition = '0.3s'; });
-      el.addEventListener('mouseout', () => { el.style.color = ''; });
-    });
   </script>
 
 </body>
