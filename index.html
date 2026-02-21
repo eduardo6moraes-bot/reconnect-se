@@ -5,76 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASH Foundation | Reconnect-se</title>
     <style>
-        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8f9fa; color: #202124; margin: 0; padding: 0; }
-        .header { background-color: #fff; padding: 20px; text-align: center; border-bottom: 1px solid #dadce0; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .logo { font-size: 24px; font-weight: bold; letter-spacing: -1px; }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f4f7f9; color: #202124; margin: 0; padding: 0; }
+        .header { background-color: #fff; padding: 30px; text-align: center; border-bottom: 1px solid #dadce0; }
+        .logo { font-size: 28px; font-weight: bold; letter-spacing: -1px; }
         .logo span:nth-child(1) { color: #4285F4; } .logo span:nth-child(2) { color: #EA4335; }
         .logo span:nth-child(3) { color: #FBBC05; } .logo span:nth-child(4) { color: #34A853; }
         
         .container { max-width: 900px; margin: 40px auto; padding: 20px; }
-        .card { background: #fff; border: 1px solid #dadce0; border-radius: 8px; padding: 24px; margin-bottom: 20px; transition: transform 0.2s; }
-        .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .section-title { font-size: 14px; font-weight: bold; color: #5f6368; text-transform: uppercase; letter-spacing: 1.5px; margin: 40px 0 20px 10px; border-left: 4px solid #4285F4; padding-left: 10px; }
         
-        .date-badge { background-color: #e8f0fe; color: #1967d2; padding: 4px 12px; border-radius: 16px; font-size: 14px; font-weight: 500; display: inline-block; margin-bottom: 12px; }
-        .award-badge { background-color: #fff7e0; color: #b05a00; border: 1px solid #ffdf8c; padding: 4px 12px; border-radius: 16px; font-size: 14px; font-weight: bold; display: inline-block; margin-bottom: 12px; }
+        .card { background: #fff; border: 1px solid #dfe1e5; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .date-badge { background-color: #e8f0fe; color: #1967d2; padding: 4px 12px; border-radius: 16px; font-size: 13px; font-weight: 600; margin-bottom: 12px; display: inline-block; }
+        .award-badge { background-color: #fef7e0; color: #b05e27; padding: 4px 12px; border-radius: 16px; font-size: 13px; font-weight: 600; margin-bottom: 12px; display: inline-block; border: 1px solid #fbe4a1; }
         
-        h2 { color: #1a73e8; margin-top: 0; font-size: 20px; }
-        p { line-height: 1.6; color: #3c4043; }
+        h2 { color: #1a73e8; margin: 0 0 10px 0; font-size: 18px; }
+        .protocol { font-family: 'Roboto Mono', monospace; font-size: 12px; color: #70757a; background: #f8f9fa; padding: 4px 8px; border-radius: 4px; display: block; width: fit-content; margin-top: 10px; }
         
-        .protocol-id { font-family: 'Roboto Mono', monospace; background: #f1f3f4; padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #5f6368; }
-        .tagline { text-align: center; color: #70757a; font-size: 18px; margin-bottom: 40px; }
-        .footer { text-align: center; padding: 40px; color: #70757a; font-size: 12px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+        
+        .footer { text-align: center; padding: 60px; color: #70757a; font-size: 12px; }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <div class="logo">
-        <span>RECON</span><span>N</span><span>ECTE-</span><span>SE</span>
-    </div>
+    <div class="logo"><span>RECON</span><span>N</span><span>ECTE-</span><span>SE</span></div>
+    <p style="color: #5f6368; margin-top: 10px;">ASH Foundation | Humanized Artificial Intelligence</p>
 </div>
 
 <div class="container">
-    <div class="tagline">
-        <strong>ASH Foundation</strong> | Arquitetura do Sentido Humano <br>
-        Metodologia IAH - Alinhamento 2026
+
+    <div class="section-title">Eixo I: Reconhecimento e Validação de Elite</div>
+    <div class="grid">
+        <div class="card">
+            <div class="award-badge">PREMIAÇÃO MÁXIMA</div>
+            <h2>Medalha Horse (Blockchain)</h2>
+            <p>Registro de exclusividade e validação de soberania digital para a metodologia ASH em 2026.</p>
+        </div>
+        <div class="card">
+            <div class="award-badge">BETA TESTER & DEV</div>
+            <h2>Plataformas Globais</h2>
+            <p>Reconhecimento oficial como desenvolvedor e beta tester da <strong>Meta, Google e OpenAI</strong>.</p>
+        </div>
+        <div class="card" style="grid-column: span 2;">
+            <div class="award-badge">SEGURANÇA (BUG HUNTER)</div>
+            <h2>Google Bug Hunters & OpenAI VRP</h2>
+            <p>Contribuições validadas na identificação de vulnerabilidades e alinhamento de segurança em IAs.</p>
+        </div>
     </div>
 
-    <div class="card" style="background-color: #fffdf0;">
-        <div class="award-badge">RECONHECIMENTO GLOBAL</div>
-        <h2>Medalhas de Desenvolvedor e Bug Hunter</h2>
-        <p>Reconhecimento oficial como desenvolvedor e beta tester nas plataformas: <strong>Google, Meta e OpenAI</strong>. Contribuições validadas em programas de Bug Bounty (Google Bug Hunters e OpenAI AI-VRP).</p>
-    </div>
-
-    <div class="card">
-        <div class="date-badge">19/01/2026</div>
-        <h2>Registro Blockchain Medalha Horse</h2>
-        <p>Validação de exclusividade e soberania digital para a Metodologia ASH. Status: <strong>VALIDATED</strong>.</p>
-    </div>
-
+    <div class="section-title">Eixo II: Protocolos de Soberania (2026)</div>
     <div class="card">
         <div class="date-badge">13/01/2026</div>
-        <h2>Protocolo Google Tracker Framework ASH</h2>
-        <p>Relatório oficial de impacto enviado ao ecossistema Google para assegurar a soberania digital e o sentido humano. <span class="protocol-id">ID: #475308759</span></p>
+        <h2>Google Tracker Framework ASH</h2>
+        <p>Protocolo enviado para assegurar que o processamento de dados do ecossistema Google respeite a subjetividade humana.</p>
+        <span class="protocol">ID: #475308759</span>
     </div>
 
+    <div class="section-title">Eixo III: Implementação Técnica (2024)</div>
     <div class="card">
         <div class="date-badge">01/02/2024</div>
-        <h2>Protocolo OpenAI Compliance</h2>
-        <p>Proposta de conformidade ASH para sistemas de inteligência artificial de larga escala. <span class="protocol-id">ID: #05414231</span></p>
+        <h2>Compliance OpenAI (Proposta ASH)</h2>
+        <p>Início do alinhamento normativo para sistemas de inteligência artificial humanizada.</p>
+        <span class="protocol">ID: #05414231</span>
     </div>
-
     <div class="card">
         <div class="date-badge">Janeiro/2024</div>
-        <h2>Google Cloud Implementation</h2>
-        <p>Início da implementação da arquitetura <strong>IAH (IA Humanizada)</strong> no Google Cloud Console, marcando a origem do rastreio de dados técnicos.</p>
+        <h2>Google Cloud Console Activation</h2>
+        <p>Marco zero do rastreio e implementação da arquitetura <strong>IAH</strong>. Ponto onde a coleta de dados foi convertida em soberania digital.</p>
     </div>
 
-    <div class="card" style="border-left: 5px solid #4285F4;">
-        <h2>Manifesto da Soberania Digital Humana</h2>
-        <p>Acesse o documento fundamental sobre a preservação da subjetividade humana e o combate à alienação algorítmica.</p>
-        <a href="https://medium.com/@eduardomoraesiah" style="color: #1a73e8; font-weight: bold; text-decoration: none;">Ler no Medium →</a>
-    </div>
 </div>
 
 <div class="footer">
