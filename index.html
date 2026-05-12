@@ -3,93 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASH Foundation | Reconnect-se</title>
+    <title>ASH Foundation | Reconnect-se • Eduardo Moraes IAH</title>
     <style>
-        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f4f7f9; color: #202124; margin: 0; padding: 0; }
-        .header { background-color: #fff; padding: 30px; text-align: center; border-bottom: 1px solid #dadce0; }
-        .logo { font-size: 28px; font-weight: bold; letter-spacing: -1px; }
-        .logo span:nth-child(1) { color: #4285F4; } .logo span:nth-child(2) { color: #EA4335; }
-        .logo span:nth-child(3) { color: #FBBC05; } .logo span:nth-child(4) { color: #34A853; }
-        
-        .container { max-width: 900px; margin: 40px auto; padding: 20px; }
-        .section-title { font-size: 14px; font-weight: bold; color: #5f6368; text-transform: uppercase; letter-spacing: 1.5px; margin: 40px 0 20px 10px; border-left: 4px solid #4285F4; padding-left: 10px; }
-        
-        .card { background: #fff; border: 1px solid #dfe1e5; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-        .date-badge { background-color: #e8f0fe; color: #1967d2; padding: 4px 12px; border-radius: 16px; font-size: 13px; font-weight: 600; margin-bottom: 12px; display: inline-block; }
-        .award-badge { background-color: #fef7e0; color: #b05e27; padding: 4px 12px; border-radius: 16px; font-size: 13px; font-weight: 600; margin-bottom: 12px; display: inline-block; border: 1px solid #fbe4a1; }
-        
-        h2 { color: #1a73e8; margin: 0 0 10px 0; font-size: 18px; }
-        .protocol { font-family: 'Roboto Mono', monospace; font-size: 12px; color: #70757a; background: #f8f9fa; padding: 4px 8px; border-radius: 4px; display: block; width: fit-content; margin-top: 10px; }
-        
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
-        
-        .manifesto-btn { display: inline-block; margin-top: 15px; background-color: #1a73e8; color: #fff; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 14px; transition: background 0.3s; }
-        .manifesto-btn:hover { background-color: #1557b0; }
-        
-        .footer { text-align: center; padding: 60px; color: #70757a; font-size: 12px; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500&display=swap');
+        :root { --primary: #1a73e8; }
+        body { font-family: 'Inter', system-ui, sans-serif; background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%); color: #202124; margin: 0; padding: 0; }
+        .header { background: linear-gradient(90deg, #1a73e8, #4285f4); color: white; padding: 40px 20px; text-align: center; position: relative; overflow: hidden; }
+        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 42px; font-weight: 600; letter-spacing: -2px; margin: 0; }
+        .logo span { color: inherit; }
+        .tagline { font-size: 18px; opacity: 0.95; margin-top: 8px; font-weight: 500; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        .section-title { font-size: 15px; font-weight: 600; color: #5f6368; text-transform: uppercase; letter-spacing: 2px; margin: 60px 0 24px; display: flex; align-items: center; gap: 12px; }
+        .section-title:before { content: ''; width: 40px; height: 3px; background: var(--primary); border-radius: 3px; }
+        .card { background: white; border-radius: 16px; padding: 28px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: all 0.3s; margin-bottom: 24px; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(26,115,232,0.15); }
+        .badge { display: inline-flex; align-items: center; padding: 6px 16px; border-radius: 9999px; font-size: 13px; font-weight: 600; gap: 6px; }
+        .award { background: #fef7e0; color: #b05e27; border: 1px solid #fbe4a1; }
+        .tech { background: #e8f0fe; color: #1967d2; }
+        .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .app-card { border: 1px solid #dadce0; border-radius: 12px; padding: 20px; }
+        h1, h2 { font-family: 'Space Grotesk', sans-serif; }
+        .footer { background: #202124; color: #9aa0a6; padding: 60px 20px; text-align: center; font-size: 14px; }
+        .highlight { background: linear-gradient(90deg, #34a853, #1a73e8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <div class="logo"><span>RECON</span><span>N</span><span>ECTE-</span><span>SE</span></div>
-    <p style="color: #5f6368; margin-top: 10px;">ASH Foundation | Humanized Artificial Intelligence</p>
+    <div class="logo">ASH <span style="color:#fff;">FOUNDATION</span></div>
+    <div class="tagline">Reconnect-se • Arquitetura do Sentido Humano (ASH) + IAH</div>
+    <p style="margin-top: 20px; font-size: 20px; max-width: 700px; margin-left: auto; margin-right: auto;">Eduardo Moraes Godinho Valaci • Senior AI Domain Architect • Google Cloud Innovator 2026</p>
 </div>
 
 <div class="container">
 
-    <div class="section-title">Eixo I: Reconhecimento e Validação de Elite</div>
-    <div class="grid">
+    <div class="section-title">RECONHECIMENTOS 2026</div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
         <div class="card">
-            <div class="award-badge">PREMIAÇÃO MÁXIMA</div>
-            <h2>Medalha Horse (Blockchain)</h2>
-            <p>Registro de exclusividade e validação de soberania digital para a metodologia ASH em 2026.</p>
+            <div class="badge award">🥇 Google Cloud Innovator</div>
+            <h2>Mar/2026</h2>
+            <p>Inovador de Elite • Google</p>
         </div>
         <div class="card">
-            <div class="award-badge">BETA TESTER & DEV</div>
-            <h2>Plataformas Globais</h2>
-            <p>Reconhecimento oficial como desenvolvedor e beta tester da <strong>Meta, Google e OpenAI</strong>.</p>
+            <div class="badge award">🚀 Gemini Enterprise Agent Ready</div>
+            <h2>Mar/2026</h2>
+            <p>Google AI</p>
         </div>
-        <div class="card" style="grid-column: span 2;">
-            <div class="award-badge">SEGURANÇA (BUG HUNTER)</div>
-            <h2>Google Bug Hunters & OpenAI VRP</h2>
-            <p>Contribuições validadas na identificação de vulnerabilidades e alinhamento de segurança em IAs.</p>
+        <div class="card">
+            <div class="badge award">🐞 Bug Hunter</div>
+            <h2>Google + OpenAI VRP</h2>
+            <p>Validações de segurança em IAs globais</p>
+        </div>
+        <div class="card">
+            <div class="badge tech">🔥 Firebase + NVIDIA</div>
+            <h2>Desenvolvedor Premium</h2>
+            <p>Google Developer Program</p>
         </div>
     </div>
 
-    <div class="section-title">Eixo II: Protocolos de Soberania (2026)</div>
+    <div class="section-title">ARQUITETURA DO SENTIDO HUMANO (ASH) + IAH</div>
     <div class="card">
-        <div class="date-badge">13/01/2026</div>
-        <h2>Google Tracker Framework ASH</h2>
-        <p>Protocolo enviado para assegurar que o processamento de dados do ecossistema Google respeite a subjetividade humana.</p>
-        <span class="protocol">ID: #475308759</span>
+        <p style="font-size: 18px; line-height: 1.6;">Criador da metodologia <strong>ASH (Arquitetura do Sentido Humano)</strong> e <strong>IAH (Inteligência Artificial Humanizada)</strong>. Foco em soberania digital humana, Inconsciente Digital, redução de alucinações e alinhamento ético com subjetividade.</p>
+        <p>Fundador da ASH Foundation • Professor e pesquisador • Alinhamento com Google, Meta e OpenAI.</p>
     </div>
 
-    <div class="section-title">Eixo III: Implementação Técnica (2024)</div>
-    <div class="card">
-        <div class="date-badge">01/02/2024</div>
-        <h2>Compliance OpenAI (Proposta ASH)</h2>
-        <p>Início do alinhamento normativo para sistemas de inteligência artificial humanizada.</p>
-        <span class="protocol">ID: #05414231</span>
-    </div>
-    <div class="card">
-        <div class="date-badge">Janeiro/2024</div>
-        <h2>Google Cloud Console Activation</h2>
-        <p>Marco zero do rastreio e implementação da arquitetura <strong>IAH</strong>. Ponto onde a coleta de dados foi convertida em soberania digital.</p>
+    <div class="section-title">ECOSSISTEMA DE APLICATIVOS ASH (Google AI Studio / IDX)</div>
+    <div class="app-grid">
+        <div class="app-card">
+            <strong>DNS Security Analyzer</strong><br>
+            <small>Análise de segurança de domínios, RDAP, expiração</small>
+        </div>
+        <div class="app-card">
+            <strong>ASH Maestro</strong><br>
+            <small>Sistema de diagnóstico baseado na Arquitetura do Sentido Humano</small>
+        </div>
+        <div class="app-card">
+            <strong>Índio OS</strong><br>
+            <small>Sistema operacional completo com navegador, bateria telemetry e holding Cássio OS</small>
+        </div>
+        <div class="app-card">
+            <strong>ASH AI Intelligent Support Hub</strong><br>
+            <small>Hub semântico com busca Elasticsearch + Gemini</small>
+        </div>
+        <div class="app-card">
+            <strong>Cássio OS Mineral</strong><br>
+            <small>Inteligência e governança mineral da Holding</small>
+        </div>
+        <div class="app-card">
+            <strong>XAMA • Fala Edu & Mãe</strong><br>
+            <small>Assistentes de voz humanizados</small>
+        </div>
+        <div class="app-card">
+            <strong>ASH Sentinela + Vortex ID</strong><br>
+            <small>Autenticação biométrica e segurança avançada</small>
+        </div>
     </div>
 
-    <div class="section-title">Manifesto Oficial</div>
-    <div class="card" style="border-left: 5px solid #1a73e8;">
-        <h2>Manifesto da Soberania Digital Humana</h2>
-        <p>Acesse a fundamentação teórica completa sobre o "Inconsciente Digital" e a preservação da subjetividade humana.</p>
-        <a href="https://medium.com/@eduardo6moraes/manifesto-da-soberania-digital-humana-6dc44594d3f6" class="manifesto-btn" target="_blank">Ler no Medium →</a>
+    <div class="section-title">PROTOCOLOS DE SOBERANIA DIGITAL</div>
+    <div class="card">
+        <p>Notificações extrajudiciais enviadas para Google Jurídico Brasil e OpenAI com provas de alinhamento da metodologia ASH.</p>
+        <p><strong>Em constante evolução</strong> para garantir que a IA sirva o ser humano, não o contrário.</p>
     </div>
+
+    <a href="https://g.dev/EduardoMoraesASH" target="_blank" style="display: inline-block; background: #1a73e8; color: white; padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 600; margin-top: 20px;">Ver perfil completo no Google Developers →</a>
 
 </div>
 
 <div class="footer">
-    © 2026 ASH Foundation | Professor Eduardo Moraes G. Valaci | Lab 4.1
+    © 2026 ASH Foundation • Eduardo Moraes Godinho Valaci (IAH) • Belo Horizonte, MG • Soberania Digital Humana
+    <br><br>
+    <a href="https://reconnectse.ia.br" style="color: #9aa0a6;">reconnectse.ia.br</a> • Domínio principal: ashfoundation.com.br (em configuração)
 </div>
 
 </body>
