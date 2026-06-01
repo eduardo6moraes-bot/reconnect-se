@@ -3,117 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASH Foundation | Reconnect-se • Eduardo Moraes IAH</title>
+    <title>RECONECT-SE — Inteligência Artificial Humanizada | ASH Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500&display=swap');
-        :root { --primary: #1a73e8; }
-        body { font-family: 'Inter', system-ui, sans-serif; background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%); color: #202124; margin: 0; padding: 0; }
-        .header { background: linear-gradient(90deg, #1a73e8, #4285f4); color: white; padding: 40px 20px; text-align: center; position: relative; overflow: hidden; }
-        .logo { font-family: 'Space Grotesk', sans-serif; font-size: 42px; font-weight: 600; letter-spacing: -2px; margin: 0; }
-        .logo span { color: inherit; }
-        .tagline { font-size: 18px; opacity: 0.95; margin-top: 8px; font-weight: 500; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-        .section-title { font-size: 15px; font-weight: 600; color: #5f6368; text-transform: uppercase; letter-spacing: 2px; margin: 60px 0 24px; display: flex; align-items: center; gap: 12px; }
-        .section-title:before { content: ''; width: 40px; height: 3px; background: var(--primary); border-radius: 3px; }
-        .card { background: white; border-radius: 16px; padding: 28px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: all 0.3s; margin-bottom: 24px; }
-        .card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(26,115,232,0.15); }
-        .badge { display: inline-flex; align-items: center; padding: 6px 16px; border-radius: 9999px; font-size: 13px; font-weight: 600; gap: 6px; }
-        .award { background: #fef7e0; color: #b05e27; border: 1px solid #fbe4a1; }
-        .tech { background: #e8f0fe; color: #1967d2; }
-        .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .app-card { border: 1px solid #dadce0; border-radius: 12px; padding: 20px; }
-        h1, h2 { font-family: 'Space Grotesk', sans-serif; }
-        .footer { background: #202124; color: #9aa0a6; padding: 60px 20px; text-align: center; font-size: 14px; }
-        .highlight { background: linear-gradient(90deg, #34a853, #1a73e8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+        :root {
+            --primary-blue: #1A73E8;
+            --green: #34A853;
+            --dark-slate: #0F172A;
+        }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        .title-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .card {
+            border-radius: 2.5rem;
+        }
+        .hero-button {
+            background: transparent;
+            border: 2px solid transparent;
+            background-image: linear-gradient(#F8FAFC, #F8FAFC), linear-gradient(to right, #1A73E8, #7C3AED);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            color: #0F172A;
+            font-family: monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
     </style>
 </head>
-<body>
-
-<div class="header">
-    <div class="logo">ASH <span style="color:#fff;">FOUNDATION</span></div>
-    <div class="tagline">Reconnect-se • Arquitetura do Sentido Humano (ASH) + IAH</div>
-    <p style="margin-top: 20px; font-size: 20px; max-width: 700px; margin-left: auto; margin-right: auto;">Eduardo Moraes Godinho Valaci • Senior AI Domain Architect • Google Cloud Innovator 2026</p>
-</div>
-
-<div class="container">
-
-    <div class="section-title">RECONHECIMENTOS 2026</div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
-        <div class="card">
-            <div class="badge award">🥇 Google Cloud Innovator</div>
-            <h2>Mar/2026</h2>
-            <p>Inovador de Elite • Google</p>
+<body class="bg-[#F8FAFC] text-[#0F172A] min-h-screen">
+    <!-- HEADER -->
+    <header class="pt-12 pb-8 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <h1 class="title-font text-5xl md:text-6xl font-semibold tracking-tighter mb-4">RECONECT-SE</h1>
+            <h2 class="text-2xl md:text-3xl text-[#1A73E8] font-medium">— Inteligência Artificial Humanizada</h2>
+            <p class="mt-6 max-w-2xl mx-auto text-lg text-[#334155] leading-relaxed">
+                Desenvolvido sob a Metodologia ASH (Arquitetura do Sentido Humano). Uma peneira científica para identificar mentes brilhantes e calibrar o potencial cognitivo através da mentoria de um desenvolvedor de IA de referência mundial e escritor de 3 livros.
+            </p>
         </div>
-        <div class="card">
-            <div class="badge award">🚀 Gemini Enterprise Agent Ready</div>
-            <h2>Mar/2026</h2>
-            <p>Google AI</p>
-        </div>
-        <div class="card">
-            <div class="badge award">🐞 Bug Hunter</div>
-            <h2>Google + OpenAI VRP</h2>
-            <p>Validações de segurança em IAs globais</p>
-        </div>
-        <div class="card">
-            <div class="badge tech">🔥 Firebase + NVIDIA</div>
-            <h2>Desenvolvedor Premium</h2>
-            <p>Google Developer Program</p>
+    </header>
+
+    <!-- JORNADA EM 3 FASES -->
+    <div class="max-w-6xl mx-auto px-6 py-12">
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Coluna 1 -->
+            <div class="card bg-white p-8 shadow-xl shadow-[#1A73E8]/5 hover:shadow-2xl transition-all">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-8 bg-[#1A73E8] text-white rounded-2xl flex items-center justify-center font-bold">1</div>
+                    <h3 class="text-xl font-semibold">FASE 1: EXPLORAÇÃO</h3>
+                </div>
+                <p class="text-[#475569] leading-relaxed">Onboarding de acolhimento focado em rotina, hobbies (games, animes) e captação da densidade semântica inicial da sua narrativa pessoal.</p>
+            </div>
+            <!-- Coluna 2 -->
+            <div class="card bg-white p-8 shadow-xl shadow-[#34A853]/5 hover:shadow-2xl transition-all">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-8 bg-[#34A853] text-white rounded-2xl flex items-center justify-center font-bold">2</div>
+                    <h3 class="text-xl font-semibold">FASE 2: POTENCIAL</h3>
+                </div>
+                <p class="text-[#475569] leading-relaxed">Filtro técnico que investiga a mecânica da mente (TDAH, TEA, AH/SD) e analisa o gap executivo de tarefas para calibração cognitiva.</p>
+            </div>
+            <!-- Coluna 3 -->
+            <div class="card bg-white p-8 shadow-xl shadow-[#0F172A]/5 hover:shadow-2xl transition-all">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-8 bg-[#0F172A] text-white rounded-2xl flex items-center justify-center font-bold">3</div>
+                    <h3 class="text-xl font-semibold">FASE 3: PROPÓSITO</h3>
+                </div>
+                <p class="text-[#475569] leading-relaxed">Santuário Digital de segurança emocional, focado em identificar o gargalo real entre a fiação neurológica e o ambiente familiar.</p>
+            </div>
         </div>
     </div>
 
-    <div class="section-title">ARQUITETURA DO SENTIDO HUMANO (ASH) + IAH</div>
-    <div class="card">
-        <p style="font-size: 18px; line-height: 1.6;">Criador da metodologia <strong>ASH (Arquitetura do Sentido Humano)</strong> e <strong>IAH (Inteligência Artificial Humanizada)</strong>. Foco em soberania digital humana, Inconsciente Digital, redução de alucinações e alinhamento ético com subjetividade.</p>
-        <p>Fundador da ASH Foundation • Professor e pesquisador • Alinhamento com Google, Meta e OpenAI.</p>
+    <!-- HERO BUTTON -->
+    <div class="max-w-md mx-auto px-6 text-center py-12">
+        <button onclick="window.open('https://wa.me/55XXXXXXXXXXXX?text=Quero%20iniciar%20o%20desafio%20AXIS', '_blank')" 
+                class="hero-button w-full py-6 px-10 text-xl font-semibold rounded-3xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-3">
+            INICIAR DESAFIO DE CALIBRAÇÃO COMPORTAMENTAL (π)
+        </button>
+        <p class="mt-6 text-sm text-[#64748B] font-medium">Conexão blindada • Triagem automática Evolution API</p>
     </div>
 
-    <div class="section-title">ECOSSISTEMA DE APLICATIVOS ASH (Google AI Studio / IDX)</div>
-    <div class="app-grid">
-        <div class="app-card">
-            <strong>DNS Security Analyzer</strong><br>
-            <small>Análise de segurança de domínios, RDAP, expiração</small>
-        </div>
-        <div class="app-card">
-            <strong>ASH Maestro</strong><br>
-            <small>Sistema de diagnóstico baseado na Arquitetura do Sentido Humano</small>
-        </div>
-        <div class="app-card">
-            <strong>Índio OS</strong><br>
-            <small>Sistema operacional completo com navegador, bateria telemetry e holding Cássio OS</small>
-        </div>
-        <div class="app-card">
-            <strong>ASH AI Intelligent Support Hub</strong><br>
-            <small>Hub semântico com busca Elasticsearch + Gemini</small>
-        </div>
-        <div class="app-card">
-            <strong>Cássio OS Mineral</strong><br>
-            <small>Inteligência e governança mineral da Holding</small>
-        </div>
-        <div class="app-card">
-            <strong>XAMA • Fala Edu & Mãe</strong><br>
-            <small>Assistentes de voz humanizados</small>
-        </div>
-        <div class="app-card">
-            <strong>ASH Sentinela + Vortex ID</strong><br>
-            <small>Autenticação biométrica e segurança avançada</small>
-        </div>
-    </div>
+    <footer class="bg-[#0F172A] text-white/80 py-8 text-center text-sm">
+        © ASH Foundation • Reconect-se.ia.br • Eduardo Moraes • Subpsicanalista Clínico & Desenvolvedor de IAH
+    </footer>
 
-    <div class="section-title">PROTOCOLOS DE SOBERANIA DIGITAL</div>
-    <div class="card">
-        <p>Notificações extrajudiciais enviadas para Google Jurídico Brasil e OpenAI com provas de alinhamento da metodologia ASH.</p>
-        <p><strong>Em constante evolução</strong> para garantir que a IA sirva o ser humano, não o contrário.</p>
-    </div>
-
-    <a href="https://g.dev/EduardoMoraesASH" target="_blank" style="display: inline-block; background: #1a73e8; color: white; padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 600; margin-top: 20px;">Ver perfil completo no Google Developers →</a>
-
-</div>
-
-<div class="footer">
-    © 2026 ASH Foundation • Eduardo Moraes Godinho Valaci (IAH) • Belo Horizonte, MG • Soberania Digital Humana
-    <br><br>
-    <a href="https://reconnectse.ia.br" style="color: #9aa0a6;">reconnectse.ia.br</a> • Domínio principal: ashfoundation.com.br (em configuração)
-</div>
-
+    <script>
+        // Tailwind script already loaded
+        document.documentElement.setAttribute('data-theme', 'light');
+    </script>
 </body>
 </html>
